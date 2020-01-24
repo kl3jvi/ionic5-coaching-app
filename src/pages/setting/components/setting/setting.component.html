@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button menu (click)="toggleMenu()">
+        <ion-icon
+          slot="icon-only"
+          color="white"
+          size="small"
+          src="assets/icon/menu1.svg"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Setting</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <app-accordion #accordion>
+    <app-expansion-panel *ngFor="let setting of settings" [open]="setting.open">
+      <ng-template #title>
+        <div class="title">{{ setting.title }}</div>
+      </ng-template>
+
+      <ng-template #body>
+        <app-simple-item
+          *ngFor="let item of setting.items"
+          (click)="item.selected = !item.selected"
+        >
+          <div class="img" prefix [image-loader]="item.icon"></div>
+          <span>{{ item.text }}</span>
+          <ion-icon
+            size="large"
+            suffix
+            [name]="item.selected ? 'checkmark-circle' : 'radio-button-off'"
+            color="primary"
+          >
+          </ion-icon>
+        </app-simple-item>
+      </ng-template>
+    </app-expansion-panel>
+  </app-accordion>
+
+  <ion-button
+    expand="block"
+    shape="round"
+    color="danger"
+    (click)="auth$.signOut(); gotoPage(routes.auth)"
+  >
+    Logout
+  </ion-button>
+</ion-content>

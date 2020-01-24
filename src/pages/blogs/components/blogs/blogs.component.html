@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button menu (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Blogs</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="add()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/add.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="gradient">
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="fitness" checked>
+        <ion-label>Mental Health</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="diet">
+        <ion-label>Yoga</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="lifestyle">
+        <ion-label>Lifestyle</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status">
+
+    <ng-container [ngSwitch]="selectedSegment">
+      <ng-container *ngSwitchCase="'diet'">
+        <app-diet-blog-item [blog]="blog" *ngFor="let blog of segmentBlogs | orderBy: '-created_at'"
+          (click)="openBlog(blog)">
+        </app-diet-blog-item>
+      </ng-container>
+      <ng-container *ngSwitchCase="'lifestyle'">
+        <app-lifestyle-blog-item [blog]="blog" *ngFor="let blog of segmentBlogs | orderBy: '-created_at'"
+          (click)="openBlog(blog)">
+        </app-lifestyle-blog-item>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <app-fitness-blog-item [blog]="blog" *ngFor="let blog of segmentBlogs | orderBy: '-created_at'"
+          (click)="openBlog(blog)">
+        </app-fitness-blog-item>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="segmentBlogs && segmentBlogs.length === 0">
+
+      <div class="empty-data">
+        <div class="empty-data__image" image-loader="assets/images/other/empty-box.png"></div>
+        <div class="empty-data__title">No blogs available</div>
+        <div class="empty-data__subtitle">Add a new blog to see it appear here</div>
+      </div>
+    </ng-container>
+
+
+
+  </app-spinner>
+</ion-content>

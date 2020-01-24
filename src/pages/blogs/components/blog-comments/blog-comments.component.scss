@@ -1,0 +1,45 @@
+:host {
+  app-simple-item {
+    .profile {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 1px 1px 15px 1px rgba(var(--ion-color-stable-rgb), 0.2);
+    }
+
+    h2 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0;
+
+      small {
+        font-size: 11px;
+        font-weight: 300;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+      font-size: 13px;
+      color: var(--ion-color-medium);
+    }
+
+    span {
+      font-size: 11px;
+      color: var(--ion-color-primary);
+    }
+
+    .actions {
+      flex-direction: column;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  ion-footer {
+    form-field {
+      margin: 10px;
+      width: unset;
+    }
+  }
+}

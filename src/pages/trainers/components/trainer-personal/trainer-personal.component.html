@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-title>Information</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()" color="white">
+        <ion-icon slot="icon-only" mode="md" color="white" size="small" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status" *ngIf="trainer">
+
+    <app-simple-item>
+      <h3>About</h3>
+      <p>
+        Madison is fueled by her passion for understanding the nuances of cross-cultural advertising. She considers
+        herself a ‘forever student,’ eager to both build on her academic foundations in psychology and sociology and
+        stay in tune with the latest digital marketing strategies through continued coursework and professional
+        development.
+      </p>
+    </app-simple-item>
+
+    <app-simple-item>
+      <h3>Address</h3>
+      <p>
+        {{trainer.address}}, {{trainer.city}}, {{trainer.country}}
+      </p>
+    </app-simple-item>
+
+    <app-simple-item>
+      <h3>Contact Details</h3>
+
+      <p>{{trainer.email}}</p>
+      <p>{{trainer.phone}}</p>
+    </app-simple-item>
+
+    <app-simple-item class="achievements">
+      <h3>Awards and Achievements</h3>
+      <br>
+      <ion-slides pager>
+        <ion-slide *ngFor="let item of trainer.achievements">
+          <blockquote>
+            <h2>{{item.title}}</h2>
+            <p>{{item.description}}</p>
+            <span>{{item.date | date}}</span>
+          </blockquote>
+        </ion-slide>
+      </ion-slides>
+    </app-simple-item>
+  </app-spinner>
+</ion-content>

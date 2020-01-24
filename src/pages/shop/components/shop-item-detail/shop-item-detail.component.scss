@@ -1,0 +1,95 @@
+:host {
+  .basket-amount {
+    position: absolute;
+    top: 13px;
+    color: var(--ion-color-primary);
+    background: white;
+    font-size: 14px;
+    width: 10px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .name {
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: capitalize;
+      text-align: center;
+    }
+
+    .price {
+      margin-top: 5px;
+      font-size: 17px;
+      color: var(--ion-color-primary);
+    }
+
+    .image {
+      margin: 20px 0;
+      width: 100%;
+      height: 200px;
+      background-size: contain !important;
+    }
+  }
+
+  .content {
+    .options {
+      display: flex;
+      width: 100%;
+
+      .item {
+        flex: 1;
+
+        form-field {
+          ::ng-content {
+            .input-wrapper {
+              padding: 0;
+            }
+          }
+        }
+      }
+
+      .space {
+        flex: .1;
+      }
+
+      .quantity {
+        flex: 1;
+      }
+    }
+
+    app-rating {
+      display: flex;
+      margin: 15px 10px 0;
+      justify-content: center;
+    }
+
+    .description {
+      font-size: 12px;
+      margin: 10px 15px;
+      text-align: center;
+    }
+  }
+
+  .select-menu {
+    ::ng-deep {
+      .input-wrapper {
+        padding: 0 !important;
+
+        ion-select {
+          padding: 7px 12px;
+          display: flex;
+          align-items: center;
+
+          .select-placeholder {
+            opacity: 1;
+            color: var(--ion-color-medium);
+          }
+        }
+      }
+    }
+  }
+}

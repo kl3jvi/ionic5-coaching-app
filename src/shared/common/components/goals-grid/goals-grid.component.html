@@ -1,0 +1,6 @@
+<div class="goals">
+  <div class="goals__item" *ngFor="let item of goals" (click)="open(item)">
+    <div class="goals__item__title">{{item.title}}</div>
+    <div class="goals__item__value">{{item.value || 0}} <small>{{item.units}}</small></div>
+  </div>
+</div>

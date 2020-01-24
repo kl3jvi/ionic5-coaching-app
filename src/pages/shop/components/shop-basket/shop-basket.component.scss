@@ -1,0 +1,59 @@
+:host {
+  app-simple-item {
+
+    ::ng-deep {
+      .content {
+        overflow: hidden;
+
+        .name {
+          font-weight: 600;
+          font-size: 14px;
+        }
+
+        .price {
+          font-size: 13px;
+          color: var(--ion-color-medium);
+          margin: 5px 0 10px;
+        }
+
+        .qty {
+          display: flex;
+          border: 1px solid var(--ion-color-light);
+          border-radius: 6px;
+          width: 80%;
+          align-items: center;
+          justify-content: center;
+
+          input {
+            width: 50px;
+            text-align: center
+          }
+        }
+      }
+
+      .suffix {
+        flex-direction: column;
+
+        .photo {
+          width: 85px;
+          height: 80px;
+          border: 1px solid var(--ion-color-light);
+        }
+
+        .view {
+          padding: 2px 0;
+          font-size: 13px;
+          font-weight: 600;
+          text-align: center;
+          color: var(--ion-color-dark);
+          text-transform: uppercase;
+          background: var(--ion-color-light);
+        }
+      }
+    }
+  }
+
+  .detail {
+    padding: 0 20px;
+  }
+}

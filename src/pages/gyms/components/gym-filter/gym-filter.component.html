@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="white">
+    <ion-title>Filter</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" color="medium" size="small" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollY="false">
+  <app-spinner>
+
+    <ion-item>
+      <ion-label>Radius</ion-label>
+      <ion-range min="0" max="5000" step="100" value="{{filter.radius}}" color="secondary" [(ngModel)]="filter.radius">
+        <ion-label slot="start">{{filter.radius}}</ion-label>
+        <ion-label slot="end">5000</ion-label>
+      </ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Open Now?</ion-label>
+      <ion-toggle [(ngModel)]="filter.openNow"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Type of Establishment</ion-label>
+      <!-- outline="true" color="medium" class="select-menu" -->
+      <ion-select inputRef name="type" [interfaceOptions]="typeSelectOptions" [(ngModel)]="filter.type" required>
+        <ion-select-option [value]="item" *ngFor="let item of typeSelectOptions.data">
+          {{item}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </app-spinner>
+
+</ion-content>
+
+<ion-footer padding>
+  <ion-button expand="block" color="primary" shape="round" (click)="save()">
+    Save
+  </ion-button>
+</ion-footer>

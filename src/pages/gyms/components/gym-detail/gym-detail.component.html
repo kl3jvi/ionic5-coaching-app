@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()" color="white">
+        <ion-icon
+          slot="icon-only"
+          color="white"
+          size="small"
+          name="arrow-back"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Gym Detail</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="share()" color="white">
+        <ion-icon
+          slot="icon-only"
+          mode="md"
+          color="white"
+          size="small"
+          name="share"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status">
+    <div class="wrapper" *ngIf="gym">
+      <div class="images" [image-loader]="gym.images[imageIndex]">
+        <div class="overlay">
+          <ion-button
+            fill="clear"
+            color="white"
+            (click)="
+              imageIndex =
+                imageIndex < 0
+                  ? imageIndex === gym.images.length - 1
+                  : imageIndex - 1
+            "
+          >
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+          <ion-button
+            fill="clear"
+            color="white"
+            (click)="
+              imageIndex =
+                imageIndex > gym.images.length - 1
+                  ? imageIndex === 0
+                  : imageIndex + 1
+            "
+          >
+            <ion-icon name="arrow-forward"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="name">{{ gym.name }}</div>
+        <div class="sub-desc">
+          <div class="vicinity">{{ gym.vicinity }}</div>
+          <app-rating [rate]="gym.rating"></app-rating>
+        </div>
+
+        <div class="actions">
+          <ion-button
+            *ngFor="let action of actions"
+            fill="outline"
+            (click)="action.click()"
+          >
+            <ion-icon [name]="action.icon"></ion-icon>
+          </ion-button>
+        </div>
+
+        <div class="about">
+          <h4>About</h4>
+          <p>{{ msg }} {{ msg }}</p>
+        </div>
+
+        <div class="people" id="people">
+          <h4>Our Staff</h4>
+          <div class="staff">
+            <app-simple-item *ngFor="let item of trainers | slice: 0:8">
+              <div class="photo" [image-loader]="item.picture"></div>
+            </app-simple-item>
+          </div>
+        </div>
+
+        <div class="open-times" id="open-times">
+          <h4>Open Times</h4>
+          <ul>
+            <li *ngFor="let item of gym?.opening_hours?.weekday_text">
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </app-spinner>
+  <div #mapElement class="map" hidden></div>
+</ion-content>

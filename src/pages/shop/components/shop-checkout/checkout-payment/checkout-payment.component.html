@@ -1,0 +1,78 @@
+<div class="payment-methods" image-loader="./assets/images/other/payments.jpg"></div>
+
+<ng-container *ngIf="input.length > 0">
+  <ion-radio-group>
+    <ion-item *ngFor="let item of input">
+      <ion-label
+        >Card ending <small>****{{ item.number | slice: 14:19 }}</small></ion-label
+      >
+      <ion-radio mode="md" slot="end" [value]="item" (ionSelect)="output.emit(item)"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+  <ion-button
+    expand="block"
+    color="light"
+    size="small"
+    shape="round"
+    (click)="toggleAdd = true"
+    *ngIf="!toggleAdd"
+  >
+    Add Another Payment Method
+  </ion-button>
+</ng-container>
+
+<form #form="ngForm" *ngIf="input.length === 0 || toggleAdd">
+  <form-field outline="true" color="medium">
+    <ion-input
+      inputRef
+      placeholder="Name"
+      name="name"
+      [(ngModel)]="model.name"
+      required
+    ></ion-input>
+  </form-field>
+
+  <form-field outline="true" color="medium">
+    <img
+      *ngIf="cardImage"
+      prefix
+      style="max-width:25px;"
+      src="./assets/images/card-icons/{{ cardImage }}.png"
+    />
+    <ion-input
+      inputRef
+      ccNumber
+      name="number"
+      (cc-image)="cardImage = $event"
+      placeholder="Card Number"
+      [(ngModel)]="model.number"
+      required
+    ></ion-input>
+  </form-field>
+
+  <form-field outline="true" color="medium">
+    <ion-input
+      inputRef
+      ccExp
+      name="exp"
+      placeholder="Expiry"
+      [(ngModel)]="model.exp"
+      required
+    ></ion-input>
+  </form-field>
+
+  <form-field outline="true" color="medium">
+    <ion-input
+      inputRef
+      ccCVC
+      name="ccv"
+      placeholder="CCV"
+      [(ngModel)]="model.ccv"
+      required
+    ></ion-input>
+  </form-field>
+
+  <ion-button expand="block" size="small" color="light" shape="round" (click)="save()">
+    Add Payment Method
+  </ion-button>
+</form>

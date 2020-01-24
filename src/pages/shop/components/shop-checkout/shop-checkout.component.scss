@@ -1,0 +1,13 @@
+:host {
+  ::ng-deep {
+    app-expansion-panel {
+      .header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .body {
+        padding: 0 20px;
+      }
+    }
+  }
+}

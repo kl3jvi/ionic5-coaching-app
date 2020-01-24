@@ -1,0 +1,10 @@
+:host {
+  ion-segment {
+    ion-segment-button {
+      max-width: 100%;
+      --background-activated: var(--ion-color-light);
+      --color-activated: var(--ion-color-primary);
+      --color-checked: var(--ion-color-primary) !important;
+    }
+  }
+}

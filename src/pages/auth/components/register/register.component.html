@@ -1,0 +1,64 @@
+<ion-content>
+  <div class="container">
+    <div class="container__content">
+      <div class="container__content__center">
+        <div class="title">Register</div>
+        <div class="subtitle">create an account, its a good idea!
+        </div>
+
+        <form-field outline="true" color="medium">
+          <ion-icon prefix src="assets/icon/user.svg"></ion-icon>
+          <ion-input inputRef placeholder="Display Name" [(ngModel)]="model.fullname" #fullname="ngModel" required>
+          </ion-input>
+          <div errors *ngIf="fullname.touched && fullname.invalid">
+            <span *ngIf="fullname?.errors?.required">this field is required</span>
+          </div>
+        </form-field>
+
+        <form-field outline="true" color="medium">
+          <ion-icon prefix src="assets/icon/envelope.svg"></ion-icon>
+          <ion-input inputRef placeholder="Email" [(ngModel)]="model.email" #email="ngModel" required></ion-input>
+          <div errors *ngIf="email.touched && email.invalid">
+            <span *ngIf="email?.errors?.required">this field is required</span>
+          </div>
+        </form-field>
+
+        <form-field outline="true" color="medium">
+          <ion-icon prefix src="assets/icon/lock.svg"></ion-icon>
+          <ion-input inputRef type="password" placeholder="Password" [(ngModel)]="model.password" #password="ngModel"
+            (secure)="passwordStrength = $event" required></ion-input>
+          <small class="pass-strength" suffix
+            [ngStyle]="{'background': 'var(--ion-color-' + passwordStrength + ')'}"></small>
+          <div errors *ngIf="password.touched && password.invalid">
+            <span *ngIf="password?.errors?.required">this field is required</span>
+            <span *ngIf="password?.errors?.secure">password is not secure</span>
+          </div>
+        </form-field>
+
+        <form-field outline="true" color="medium">
+          <ion-icon prefix src="assets/icon/spell-check.svg"></ion-icon>
+          <ion-input inputRef type="password" placeholder="Retype Password" [(ngModel)]="model.rpassword"
+            [compare-password]="password" #rpassword="ngModel" required></ion-input>
+
+          <div errors *ngIf="rpassword.touched && rpassword.invalid">
+            <span *ngIf="rpassword?.errors?.required">this field is required</span>
+            <span *ngIf="rpassword?.errors?.compareTo">passwords do not match</span>
+          </div>
+        </form-field>
+
+        <div class="sign-in">
+          <ion-button expand="block" shape="round" fill="solid" color="gradient" [btnStatus]="loading"
+            (click)="signup()">
+            Sign Up</ion-button>
+          <small>
+            <p>By clicking sign up you are agreeing to our terms and conditions</p>
+          </small>
+        </div>
+
+      </div>
+    </div>
+    <div class="other-options">
+      <p>Already have an account? <a (click)="gotoPage(routes.login)">Sign in</a></p>
+    </div>
+  </div>
+</ion-content>

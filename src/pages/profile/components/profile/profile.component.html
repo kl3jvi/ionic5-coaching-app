@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openOptions()">
+        <ion-icon slot="icon-only" color="white" size="small" name="more" mode="md"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="auth$.user$ | async as user">
+
+    <div class="profile">
+      <div class="profile__image" [image-loader]="user.profileImage"></div>
+      <div class="profile__title">{{user.fullname}}
+        <small>
+          <ion-icon src="assets/icon/pencil.svg" (click)="openOptions()"></ion-icon>
+        </small>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <app-goals-grid [goals]="goals"></app-goals-grid>
+    </div>
+
+    <div class="content">
+      <app-simple-item (click)="gotoPage(routes.notifications)">
+        <ion-icon prefix src="assets/icon/bell.svg" color="primary"></ion-icon>
+        <span>Notifications</span>
+        <ion-icon suffix name="arrow-forward" color="primary"></ion-icon>
+      </app-simple-item>
+
+      <app-simple-item (click)="gotoPage(routes.schedule)">
+        <ion-icon prefix src="assets/icon/calendar.svg" color="primary"></ion-icon>
+        <span>Trainer Schedule</span>
+        <ion-icon suffix name="arrow-forward" color="primary"></ion-icon>
+      </app-simple-item>
+
+      <!-- <app-simple-item (click)="reviews(trainer)">
+        <ion-icon prefix src="assets/icon/star.svg" color="primary"></ion-icon>
+        <span>Reviews</span>
+        <ion-icon suffix name="arrow-forward" color="primary"></ion-icon>
+      </app-simple-item> -->
+    </div>
+  </ng-container>
+</ion-content>

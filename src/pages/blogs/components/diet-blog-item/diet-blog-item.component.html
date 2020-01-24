@@ -1,0 +1,13 @@
+<div class="diet">
+  <div class="diet__image" [image-loader]="blog.images[0]" *ngIf="blog.images">
+  </div>
+  <div class="diet__content">
+    <div class="diet__content__title">{{blog.title}}</div>
+    <div class="diet__content__desc">{{blog.content}}</div>
+    <div class="diet__content__author" *ngIf="blog.user">
+      <div class="diet__content__author__image" [image-loader]="blog.user.picture"></div>
+      <div class="diet__content__author__name">{{blog.user.fullname | slice: 0: 20}}</div>
+      <div class="diet__content__author__date">{{blog.created_at | date}}</div>
+    </div>
+  </div>
+</div>

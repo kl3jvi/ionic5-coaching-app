@@ -1,0 +1,22 @@
+.empty-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &__image {
+    width: 150px;
+    height: 150px;
+  }
+
+  &__title {
+    font-size: 21px;
+    font-weight: 600;
+    margin: 20px 0 10px;
+  }
+
+  &__subtitle {
+    font-size: 12px;
+  }
+}

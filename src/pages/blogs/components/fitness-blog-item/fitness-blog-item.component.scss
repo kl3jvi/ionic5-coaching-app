@@ -1,0 +1,60 @@
+:host {
+  display: block;
+  width: 100%;
+
+  .fitness {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 1px 1px 15px 1px rgba(var(--ion-color-stable-rgb), 0.2);
+    border-radius: 6px;
+
+    &__image {
+      width: 40%;
+      border-radius: 6px;
+    }
+
+    &__content {
+      padding-left: 10px;
+      overflow: hidden;
+      flex: 1;
+
+      &__title {
+        font-size: 14px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      &__desc {
+        font-size: 12px;
+        font-weight: 300;
+        padding: 10px 0;
+      }
+
+      &__author {
+        display: flex;
+        align-items: center;
+
+        &__image {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+        }
+
+        &__name {
+          font-size: 10px;
+          flex: 1;
+          color: var(--ion-color-medium);
+          white-space: nowrap;
+          margin: 0 10px;
+          overflow: hidden;
+        }
+
+        &__date {
+          font-size: 10px;
+          color: var(--ion-color-primary);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<ion-content>
+
+  <div class="modal-content">
+    <app-spinner [status]="status" (event)="closeModal();">
+      <div class="title">
+        <span>{{post.is_deleted ? 'Edit': 'Add'}} {{post.type}} Post</span>
+        <ion-icon name="close" (click)="closeModal()"></ion-icon>
+      </div>
+
+      <textarea elastic-textarea="50" name="address" placeholder="Add Title" #address="ngModel"
+        [(ngModel)]="post.title"></textarea>
+
+      <textarea elastic-textarea="100" name="address" placeholder="Add Content" #address="ngModel"
+        [(ngModel)]="post.content"></textarea>
+
+      <div class="images-wrapper">
+        <ion-button expand="block" color="medium" (click)="addImages()">
+          Add images
+          <ion-icon name="camera" slot="end"></ion-icon>
+        </ion-button>
+        <div class="images">
+          <div class="image" *ngFor="let item of images">
+            <img [src]="item" alt="">
+          </div>
+        </div>
+        <div class="image-count" *ngIf="images.length > 0">{{images.length}} images added</div>
+      </div>
+
+      <ion-button expand="block" (click)="savePost()">Save
+        <ion-icon name="send" slot="end"></ion-icon>
+      </ion-button>
+    </app-spinner>
+  </div>
+</ion-content>

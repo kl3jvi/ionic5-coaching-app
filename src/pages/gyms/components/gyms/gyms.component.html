@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button menu (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Gyms</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="showMap = !showMap" color="white">
+        <ion-icon slot="icon-only" color="white" size="small"
+          [src]="!showMap ? 'assets/icon/map-marker.svg' : 'assets/icon/line-spacing.svg'"></ion-icon>
+      </ion-button>
+      <ion-button (click)="openFilter()" color="white">
+        <ion-icon slot="icon-only" color="white" size="small" name="more" mode="md"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <app-search-bar (event)="searchPlaceOnMap($event)"></app-search-bar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status">
+
+    <div #mapElement class="map" [hidden]="!showMap"></div>
+
+
+    <ng-container *ngIf="!showMap">
+      <app-simple-item *ngFor="let item of gyms" (click)="open(item)">
+        <div class="name">{{item.name}}</div>
+        <app-rating [rate]="item.rating"></app-rating>
+        <div class="vicinity">{{item.vicinity}}</div>
+
+        <ng-container suffix>
+          <div class="photo" [image-loader]="item.images && item?.images.length > 0 ? item?.images[0]: null"></div>
+          <span class="now-open" *ngIf="item?.opening_hours?.open_now">Opened</span>
+          <span class="now-close" *ngIf="!item?.opening_hours?.open_now">Closed</span>
+        </ng-container>
+      </app-simple-item>
+
+      <app-empty-data *ngIf="gyms && gyms.length === 0" [config]="{
+      title: 'No gyms available', 
+      subtitle: 'Maybe you want to widen your search a bit, use search to enter a gym you want to find, more filter options available in filter menu at the top right of the page.', 
+      showImage: true}">
+      </app-empty-data>
+    </ng-container>
+
+  </app-spinner>
+</ion-content>

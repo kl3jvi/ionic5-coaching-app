@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  padding: 10px 0;
+  form {
+    padding: 10px 0;
+  }
+  ion-radio-group {
+    padding: 10px 0;
+    display: block;
+  }
+  .country {
+    ::ng-deep {
+      .input-wrapper {
+        padding: 0 !important;
+
+        ion-select {
+          padding: 7px 12px;
+          display: flex;
+          align-items: center;
+
+          .select-placeholder {
+            opacity: 1;
+            color: var(--ion-color-medium);
+          }
+        }
+      }
+    }
+  }
+}

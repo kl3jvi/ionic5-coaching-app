@@ -1,0 +1,4 @@
+<div class="search">
+  <input type="search" #searchInput placeholder="Search" (keyup)='search.next($event.target.value)'>
+  <ion-icon *ngIf="hasValue" size="large" color="medium" name="close" (click)="clearSearch(searchInput)"></ion-icon>
+</div>

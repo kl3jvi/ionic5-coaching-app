@@ -1,0 +1,21 @@
+:host {
+  .grid {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    app-simple-item {
+      img {
+        width: 100%;
+        height: auto;
+        flex: 1;
+      }
+
+      span {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+  }
+}

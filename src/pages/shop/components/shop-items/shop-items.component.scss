@@ -1,0 +1,62 @@
+:host {
+  ion-toolbar {
+    ion-title {
+      text-transform: capitalize;
+    }
+  }
+
+  .basket-amount {
+    position: absolute;
+    top: 13px;
+    color: var(--ion-color-primary);
+    background: white;
+    font-size: 14px;
+    width: 10px;
+  }
+
+  .grid {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    app-simple-item {
+      overflow: hidden;
+
+      .actions {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      ::ng-deep {
+        .content {
+          overflow: hidden;
+        }
+      }
+
+      .img {
+        width: 100%;
+        height: 130px;
+        background-size: contain !important;
+      }
+
+      .name,
+      .price {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        text-transform: capitalize;
+      }
+
+      .name {
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .price {
+        margin-top: 2px;
+        font-size: 13px;
+      }
+    }
+  }
+}

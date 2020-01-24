@@ -1,0 +1,18 @@
+<div class="loading-wrapper" *ngIf="status === 'load'">
+  <div class="loader">
+  </div>
+</div>
+<div class="loading-wrapper" *ngIf="status === 'error'">
+  <img src="./assets/icon/fail.gif" alt="">
+  <ion-button (click)="event.emit()" color="danger" fill="clear">
+    <ion-icon name="close"></ion-icon>
+  </ion-button>
+</div>
+<div class="loading-wrapper" *ngIf="status === 'success'">
+  <img src="./assets/icon/check2.gif" alt="">
+
+  <ion-button (click)="event.emit()" fill="clear">
+    <ion-icon name="close"></ion-icon>
+  </ion-button>
+</div>
+<ng-content *ngIf="!status"></ng-content>

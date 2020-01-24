@@ -1,0 +1,44 @@
+<ion-content>
+  <div class="container">
+    <div class="container__content">
+      <div class="container__content__center">
+        <div class="title">Login</div>
+        <div class="subtitle">Sign in with your email and password
+        </div>
+
+        <form-field outline="true" color="medium">
+          <ion-icon prefix src="assets/icon/user.svg"></ion-icon>
+          <ion-input inputRef placeholder="Email" [(ngModel)]="model.email"></ion-input>
+        </form-field>
+
+        <form-field outline="true" color="medium">
+          <ion-icon prefix src="assets/icon/lock.svg"></ion-icon>
+          <ion-input type="password" inputRef placeholder="Password" [(ngModel)]="model.password"></ion-input>
+        </form-field>
+
+        <div class="sign-in">
+          <ion-button expand="block" shape="round" fill="solid" color="gradient" (click)="login()"
+            [btnStatus]="loading">
+            Sign in
+          </ion-button>
+
+          <small>
+            <p (click)="gotoPage(routes.login)">Forgot Password?</p>
+          </small>
+        </div>
+
+      </div>
+    </div>
+    <div class="other-options">
+
+      <p>Don't have an account?
+        <a (click)="gotoPage(routes.register)">Sign up</a>
+      </p>
+
+      <ion-text color="medium">
+        <small>
+          <p (click)="gotoPage(routes.auth)">Use social login <a></a></p>
+        </small></ion-text>
+    </div>
+  </div>
+</ion-content>

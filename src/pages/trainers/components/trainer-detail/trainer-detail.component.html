@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Trainer</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="share()" color="white">
+        <ion-icon slot="icon-only" mode="md" color="white" size="small" name="share"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status" *ngIf="trainer">
+    <div class="header">
+      <div class="header-profile">
+        <ion-icon color="white" src="assets/icon/phone.svg" (click)="call(trainer)"></ion-icon>
+        <div class="profile-image" [image-loader]="trainer.picture"></div>
+        <ion-icon color="white" src="assets/icon/bubble.svg" (click)="chat(trainer)"></ion-icon>
+      </div>
+      <div class="name">{{trainer.fullname}}</div>
+      <div class="skill">{{trainer.skill}}</div>
+
+      <div class="rating">
+        <app-rating [rate]="trainer.rating"></app-rating>
+        {{trainer.rating}} stars
+      </div>
+      <div class="reviews"> by {{trainer.reviewers}} customers</div>
+      <ion-button color="gradient" expand="block" shape="round" (click)="book()">Book Appointment</ion-button>
+    </div>
+
+    <div class="content">
+      <app-simple-item (click)="personal(trainer)">
+        <ion-icon prefix src="assets/icon/user.svg" color="primary"></ion-icon>
+        <span>Personal Information</span>
+        <ion-icon suffix name="arrow-forward" color="primary"></ion-icon>
+      </app-simple-item>
+
+      <app-simple-item (click)="schedule(trainer)">
+        <ion-icon prefix src="assets/icon/calendar.svg" color="primary"></ion-icon>
+        <span>Trainer Schedule</span>
+        <ion-icon suffix name="arrow-forward" color="primary"></ion-icon>
+      </app-simple-item>
+
+      <app-simple-item (click)="reviews(trainer)">
+        <ion-icon prefix src="assets/icon/star.svg" color="primary"></ion-icon>
+        <span>Reviews</span>
+        <ion-icon suffix name="arrow-forward" color="primary"></ion-icon>
+      </app-simple-item>
+    </div>
+  </app-spinner>
+</ion-content>

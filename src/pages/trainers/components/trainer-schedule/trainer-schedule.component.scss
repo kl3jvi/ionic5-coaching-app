@@ -1,0 +1,37 @@
+:host {
+  .available-times-list {
+    padding: 10px 20px;
+    display: flex;
+    overflow-x: auto;
+    flex-direction: column;
+
+    .grid-container {
+      display: grid;
+      max-width: 100%;
+      grid-template-columns: repeat(4, 1fr);
+      margin: auto;
+
+      .item {
+        display: flex;
+        justify-content: center;
+        padding: 5px 15px;
+        margin: 5px;
+        border: 1px solid var(--ion-color-primary);
+        background: var(--ion-color-white);
+        border-radius: 6px;
+
+        // &.none {
+        //   background: var(--ion-color-light);
+        // }
+        &.other {
+          background: var(--ion-color-light);
+        }
+
+        &.user {
+          background: var(--ion-color-gradient);
+          color: var(--ion-color-white);
+        }
+      }
+    }
+  }
+}

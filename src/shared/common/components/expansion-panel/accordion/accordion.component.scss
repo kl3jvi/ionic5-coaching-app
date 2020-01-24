@@ -1,0 +1,15 @@
+:host {
+  width: 100%;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+    // color: map-get($colors, sideMenuSubheadingFontColor);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

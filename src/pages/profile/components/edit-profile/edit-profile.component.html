@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <!-- <ion-buttons slot="start">
+      <ion-button menu (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+    <ion-title>Edit Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" color="white" size="small" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="profile">
+    <div class="profile__image" [image-loader]="user.profileImage" (click)="changeImage(user)" tappable></div>
+  </div>
+
+  <form #form="ngForm">
+    <form-field outline="true" color="medium">
+      <ion-input inputRef name="name" placeholder="Full Name" [(ngModel)]="user.fullname" required></ion-input>
+    </form-field>
+
+    <form-field outline="true" color="medium" class="select-menu">
+      <ion-datetime inputRef name="dob" placeholder="Date of Birth" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"
+        [(ngModel)]="user.dob" required>
+      </ion-datetime>
+    </form-field>
+
+    <form-field outline="true" color="medium">
+      <ion-input inputRef type="number" name="phone" placeholder="Phone" [(ngModel)]="user.phone" required>
+      </ion-input>
+    </form-field>
+
+    <form-field outline="true" color="medium" class="select-menu">
+      <ion-select inputRef name="gender" [interfaceOptions]="genderSelectOptions" placeholder="Gender"
+        [(ngModel)]="user.gender" required>
+        <ion-select-option [value]="item" *ngFor="let item of genderSelectOptions.data">{{
+        item
+      }}</ion-select-option>
+      </ion-select>
+    </form-field>
+
+  </form>
+</ion-content>
+
+<ion-footer padding>
+  <ion-button expand="block" color="primary" shape="round" (click)="save()">
+    Save
+  </ion-button>
+</ion-footer>

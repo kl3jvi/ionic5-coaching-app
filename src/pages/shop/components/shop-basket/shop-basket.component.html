@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button menu (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Basket</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status">
+    <ng-container *ngIf="products.length > 0">
+      <app-simple-item *ngFor="let item of products; let i = index">
+        <div class="name">{{ item.name }}</div>
+        <div class="price">{{ item.price | currency }}</div>
+        <div class="qty">
+          <ion-button size="small" fill="clear"
+            (click)="item.amount > 1 ? (item.amount = item.amount - 1) : remove(item)">
+            <ion-icon name="remove"></ion-icon>
+          </ion-button>
+          <input type="text" [(ngModel)]="item.amount" />
+          <ion-button size="small" fill="clear" (click)="item.amount = item.amount + 1">
+            <ion-icon name="add"></ion-icon>
+          </ion-button>
+        </div>
+
+        <ng-container suffix>
+          <div class="photo" [image-loader]="item.image"></div>
+          <div class="view" (click)="open(item)">View</div>
+        </ng-container>
+      </app-simple-item>
+
+      <div class="detail">
+        <p>Total: {{ total | currency }}</p>
+        <p>VAT: 20%</p>
+        <p>Grand Total: {{ (total * (20 / 100) + total) | currency }}</p>
+      </div>
+
+    </ng-container>
+
+    <app-empty-data *ngIf="products.length === 0" [config]="{
+        title: 'Oops',
+        subtitle: 'Nothing in your basket, view products and add to basket to purchase',
+        showImage: true
+      }">
+      <ion-button shape="round" expand="block" (click)="gotoPage(routes.shopSearch)">View Products</ion-button>
+    </app-empty-data>
+  </app-spinner>
+</ion-content>
+
+<ion-footer padding>
+  <ion-button expand="block" shape="round" (click)="checkout()">Checkout</ion-button>
+</ion-footer>

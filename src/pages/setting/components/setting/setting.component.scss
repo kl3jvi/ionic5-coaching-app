@@ -1,0 +1,33 @@
+:host {
+  app-expansion-panel {
+    .title {
+      padding: 10px 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    app-simple-item {
+      align-items: center;
+      margin: 10px 0;
+
+      .img {
+        width: 20px;
+        max-width: 20px;
+        margin: 0 10px;
+        height: 20px;
+      }
+
+      ion-icon {
+        padding: 0 10px;
+      }
+
+      span {
+        border-left: 1px solid var(--ion-color-stable);
+        padding-left: 20px;
+      }
+    }
+  }
+  ion-button {
+    margin: 10px 0;
+  }
+}

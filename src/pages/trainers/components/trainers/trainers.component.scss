@@ -1,0 +1,53 @@
+:host {
+  ion-toolbar.search {
+    border-bottom: 1px solid var(--ion-color-light);
+  }
+
+  app-simple-item {
+    .profile {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      box-shadow: 1px 1px 15px 1px rgba(var(--ion-color-dark-rgb), 0.2);
+
+      .online-badge {
+        width: 18px;
+        height: 18px;
+        background: var(--ion-color-danger);
+        border-radius: 50%;
+        float: right;
+        box-shadow: 1px 1px 15px 1px rgba(var(--ion-color-light-rgb), 0.2);
+      }
+    }
+
+    .detail {
+      margin-left: 10px;
+
+      .name {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .skill {
+        font-size: 12px;
+        color: var(--ion-color-medium);
+      }
+
+      .city {
+        font-size: 12px;
+        color: var(--ion-color-primary);
+      }
+    }
+
+    .rating {
+      margin-right: 5px;
+      display: flex;
+      align-items: center;
+      color: var(--ion-color-primary);
+
+      ion-icon {
+        margin-right: 5px;
+      }
+    }
+  }
+}

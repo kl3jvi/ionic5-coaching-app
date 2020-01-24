@@ -1,0 +1,6 @@
+<span tabindex="0" style="display: flex;">
+  <div *ngFor="let item of range; let i = index">
+    <ion-icon name="star" [color]="color" *ngIf="i < rate" (click)="update(i + 1)"></ion-icon>
+    <ion-icon name="star-outline" *ngIf="i >= rate || rate===undefined" (click)="update(i + 1)"></ion-icon>
+  </div>
+</span>

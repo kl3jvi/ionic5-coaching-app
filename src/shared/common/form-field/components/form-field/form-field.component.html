@@ -1,0 +1,15 @@
+<div class="input-wrapper {{color}} {{expand}}" [ngClass]="{'fill': fill, 'border': border, 'round': shape, 'outline': outline, 'error': getInvalidState &&
+  getDirtyState}">
+  <div class="prefix">
+    <ng-content select="[prefix]" #prefix></ng-content>
+  </div>
+  <div class="input">
+    <ng-content></ng-content>
+  </div>
+  <div class="suffix">
+    <ng-content select="[suffix]" #suffix></ng-content>
+  </div>
+</div>
+<div class="error-section">
+  <ng-content select="[errors]"></ng-content>
+</div>

@@ -1,0 +1,70 @@
+:host {
+  app-search-bar {
+    border-bottom: 1px solid var(--ion-color-light);
+  }
+
+  .map {
+    height: 100vh;
+  }
+
+  app-simple-item {
+
+    ::ng-deep {
+      .content {
+        overflow: hidden;
+
+        .name {
+          font-weight: 600;
+        }
+
+        .vicinity {
+          font-size: 12px;
+          color: var(--ion-color-medium);
+        }
+
+        .types {
+          display: flex;
+          overflow: hidden;
+          white-space: nowrap;
+
+          .type {
+            font-size: 9px;
+            margin: 0 1px;
+            background: var(--ion-color-primary);
+            color: var(--ion-color-white);
+            padding: 0 6px;
+            border-radius: 16px;
+          }
+        }
+      }
+
+      .suffix {
+        flex-direction: column;
+
+        .photo {
+          width: 125px;
+          height: 100px;
+        }
+
+        .now-open,
+        .now-close {
+          padding: 2px 0;
+          font-size: 13px;
+          font-weight: 600;
+          text-align: center;
+          color: var(--ion-color-white);
+          text-transform: uppercase;
+        }
+
+        .now-open {
+          background: var(--ion-color-gradient);
+
+        }
+
+        .now-close {
+          background: var(--ion-color-danger);
+        }
+      }
+    }
+  }
+}

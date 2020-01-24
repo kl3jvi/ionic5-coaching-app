@@ -1,0 +1,36 @@
+:host {
+  h1 {
+    font-size: 38px;
+    font-weight: 800;
+  }
+  .subtext {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--ion-color-stable);
+  }
+
+  .grid {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 20px 0;
+
+    app-simple-item {
+      background: var(--ion-color-gradient-dark);
+      &:first-of-type {
+        background: var(--ion-color-gradient);
+      }
+      color: var(--ion-color-white);
+      ion-icon {
+        font-size: 50px;
+      }
+
+      span {
+        text-transform: capitalize;
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+}

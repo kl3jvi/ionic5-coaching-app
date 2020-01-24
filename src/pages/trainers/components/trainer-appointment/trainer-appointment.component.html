@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-title>Appointment</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()" color="white">
+        <ion-icon slot="icon-only" mode="md" color="white" size="small" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status" *ngIf="trainer">
+
+    <app-simple-item>
+      <div class="picture" prefix [image-loader]="trainer.picture"></div>
+      <div class="description">
+        <div class="name">{{trainer.fullname}}</div>
+        <div class="skill">{{trainer.skill}}</div>
+      </div>
+    </app-simple-item>
+
+    <app-simple-item>
+      <ion-icon src="assets/icon/calendar.svg" prefix></ion-icon>
+      <ion-datetime [(ngModel)]="appointment.date" displayFormat="MMM DD, YYYY" pickerFormat="MMM DD, YYYY">
+      </ion-datetime>
+    </app-simple-item>
+
+    <app-simple-item>
+      <ion-icon src="assets/icon/clock.svg" prefix></ion-icon>
+      <ion-datetime [(ngModel)]="appointment.date" displayFormat="HH:mm" pickerFormat="HH:mm"></ion-datetime>
+    </app-simple-item>
+
+    <app-simple-item class="detail">
+      <h5>Details</h5>
+      <textarea elastic-textarea="100" [(ngModel)]="appointment.detail"></textarea>
+    </app-simple-item>
+
+    <ion-button class="submit" (click)="manageAppt(appointment)" expand="block" shape="round" color="gradient"> Make
+      Appointment
+    </ion-button>
+  </app-spinner>
+
+</ion-content>

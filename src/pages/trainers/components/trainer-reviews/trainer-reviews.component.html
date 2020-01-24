@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-title>Reviews</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()" color="white">
+        <ion-icon slot="icon-only" mode="md" color="white" size="small" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status" *ngIf="trainer">
+    <app-simple-item *ngFor="let item of trainer.reviews">
+      <div class="author">
+        <div class="picture" [image-loader]="item.picture"></div>
+        <div class="name">{{item.name}}
+          <div class="date">{{item.date | date}}</div>
+        </div>
+        <app-rating [rate]="item.rating"></app-rating>
+      </div>
+      <div class="content">{{item.text}}</div>
+    </app-simple-item>
+  </app-spinner>
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-back-button color="light" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Schedule</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="showlist = !showlist">
+        <ion-icon slot="icon-only" color="white" size="small"
+          [src]="!showlist ? 'assets/icon/list.svg':'assets/icon/calendar.svg'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <app-spinner [status]="status">
+    <app-calendar [hidden]="showlist" #calendar [items]="appointments"></app-calendar>
+
+    <div class="event-list" *ngIf="calendar.selectedDay.events">
+      <div class="event-list-header">
+        {{calendar.selectedDay.events.length > 0 ? calendar.selectedDay.events.length: 'No'}} events on
+        {{calendar.selectedDay.date | date}}</div>
+
+      <app-simple-item *ngFor="let item of calendar.selectedDay.events" (click)="manageAppt(null, item)">
+
+        <ion-icon name="calendar" prefix size="large"></ion-icon>
+        <ng-container *ngIf="item.trainer">
+          <p>You have an appointment with {{item.trainer.fullname}} about the following: {{item.detail}}</p>
+          <p class="date">on {{item.date | date: 'longDate'}} {{item.date | date: 'mediumTime'}}</p>
+        </ng-container>
+
+        <ng-container *ngIf="!item.trainer">
+          <p class="title">{{item.title}}</p>
+          <p>{{item.detail}}</p>
+          <p class="date">on {{item.date | date: 'longDate'}} {{item.date | date: 'mediumTime'}}</p>
+        </ng-container>
+      </app-simple-item>
+
+      <app-empty-data *ngIf="calendar.selectedDay.events.length === 0" [config]="{
+        title: 'No items scheduled', 
+        subtitle: 'No events or appointments scheduled for this date', 
+        showImage: true}">
+      </app-empty-data>
+
+      <ion-button size="small" shape="round" expand="block" (click)="manageAppt(calendar.selectedDay.date, null)">
+        Add new Event
+      </ion-button>
+    </div>
+  </app-spinner>
+</ion-content>

@@ -1,0 +1,40 @@
+<div class="header">
+  <ion-button fill="clear" (click)="changeMonth(selectedMonth - 1)">
+    <ion-icon name="arrow-back"></ion-icon>
+  </ion-button>
+
+  <ion-select [selectedText]="months[currentCalendar.month]" [placeholder]="months[currentCalendar.month]"
+    [value]="currentCalendar.month" (ionChange)="changeMonth($event.detail.value)">
+    <ion-select-option *ngFor="let item of months; let i = index" [value]="i">{{item}}</ion-select-option>
+  </ion-select>
+
+  <ion-select [selectedText]="years[currentCalendar.year]" [placeholder]="years[currentCalendar.year]"
+    [value]="currentCalendar.year" (ionChange)="changeYear($event.detail.value)">
+    <ion-select-option *ngFor="let item of years" [value]="item">{{item}}</ion-select-option>
+  </ion-select>
+
+  <ion-button fill="clear" (click)="changeMonth(selectedMonth + 1)">
+    <ion-icon name="arrow-forward"></ion-icon>
+  </ion-button>
+</div>
+
+<div class="grid" *ngIf="currentCalendar && !loading">
+  <span class="text-center week-day-label" *ngFor="let weekDay of weekDays; let i = index">
+    {{ weekDay | slice: 0: 3 }}
+  </span>
+  <div *ngFor="let day of currentCalendar.days; let i = index" class="day" [ngClass]="{
+        selected: day.date === selectedDay.date,
+        'not-settable': getIsSettable(day),
+        completed: day.status === 1,
+        failed: day.status === 2
+      }" [ngStyle]="{ 'grid-row': getRow(i, day), 'grid-column': day.dayInWeek + 1 }" (click)="onChangeStatus(day)">
+    <span>{{ day.dayInMonth }}</span>
+    <div class="events" *ngIf="day.events && day.events.length > 0">
+      <span class="event" [ngStyle]="{'backgroundColor': item.color}"
+        *ngFor="let item of day.events | slice: 0: 3"></span>
+      <span *ngIf="day.events.length > 3"> + </span>
+    </div>
+  </div>
+</div>
+
+<app-spinner *ngIf="loading"></app-spinner>

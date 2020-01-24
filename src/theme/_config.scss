@@ -1,0 +1,44 @@
+.ion-color-gradient {
+  --ion-color-base: var(--ion-color-gradient);
+  --ion-color-base-rgb: var(--ion-color-gradient-rgb);
+  --ion-color-contrast: var(--ion-color-gradient-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-gradient-contrast-rgb);
+  --ion-color-shade: var(--ion-color-gradient-shade);
+  --ion-color-tint: var(--ion-color-gradient-tint);
+}
+
+.ion-color-gradient-dark {
+  --ion-color-base: var(--ion-color-gradient-dark);
+  --ion-color-base-rgb: var(--ion-color-gradient-dark-rgb);
+  --ion-color-contrast: var(--ion-color-gradient-dark-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-gradient-dark-contrast-rgb);
+  --ion-color-shade: var(--ion-color-gradient-dark-shade);
+  --ion-color-tint: var(--ion-color-gradient-dark-tint);
+}
+
+.ion-color-white {
+  --ion-color-base: var(--ion-color-white);
+  --ion-color-base-rgb: var(--ion-color-white-rgb);
+  --ion-color-contrast: var(--ion-color-white-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-white-contrast-rgb);
+  --ion-color-shade: var(--ion-color-white-shade);
+  --ion-color-tint: var(--ion-color-white-tint);
+}
+
+.ion-color-facebook {
+  --ion-color-base: var(--ion-color-facebook);
+  --ion-color-base-rgb: var(--ion-color-facebook-rgb);
+  --ion-color-contrast: var(--ion-color-facebook-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-facebook-contrast-rgb);
+  --ion-color-shade: var(--ion-color-facebook-shade);
+  --ion-color-tint: var(--ion-color-facebook-tint);
+}
+
+.ion-color-google {
+  --ion-color-base: var(--ion-color-google);
+  --ion-color-base-rgb: var(--ion-color-google-rgb);
+  --ion-color-contrast: var(--ion-color-google-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-google-contrast-rgb);
+  --ion-color-shade: var(--ion-color-google-shade);
+  --ion-color-tint: var(--ion-color-google-tint);
+}

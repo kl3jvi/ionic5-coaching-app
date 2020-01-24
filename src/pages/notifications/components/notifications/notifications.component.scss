@@ -1,0 +1,107 @@
+:host {
+  app-simple-item {
+    padding: 5px 10px;
+
+    ::ng-deep {
+      .content {
+        overflow: hidden;
+        padding: 5px;
+        padding-left: 15px;
+      }
+    }
+
+    .title {
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .description {
+      font-size: 12px;
+      color: var(--ion-color-medium);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 3px 0;
+    }
+
+    &.info {
+      align-items: center;
+      border-left: 8px solid var(--ion-color-danger);
+
+      ion-icon {
+        margin: 0 5px;
+
+      }
+
+    }
+
+    &.blog {
+      align-items: center;
+      border-left: 8px solid var(--ion-color-secondary);
+
+      ion-icon {
+        margin: 0 5px;
+
+      }
+
+    }
+
+    &.gym {
+      align-items: center;
+      border-left: 8px solid var(--ion-color-success);
+
+      ion-icon {
+        margin: 0 5px;
+
+      }
+
+    }
+
+    &.trainer {
+      align-items: center;
+      border-left: 8px solid var(--ion-color-warning);
+
+      .picture {
+        width: 60px;
+        height: 60px;
+        border-radius: 6px;
+      }
+
+      ion-icon {
+        margin: 0 5px;
+
+      }
+
+    }
+
+    &.schedule {
+      align-items: center;
+      border-left: 8px solid var(--ion-color-primary);
+
+      ::ng-deep {
+        .content {
+          padding-left: 10px;
+          border-left: 1px solid var(--ion-color-light);
+        }
+      }
+
+      .dates {
+        margin: 0 5px;
+        flex-direction: column;
+        display: flex;
+        font-size: 12px;
+        font-weight: 500;
+        padding-right: 10px;
+        justify-content: space-between;
+        min-height: 45px;
+        text-align: center;
+      }
+
+      .trainer {
+        font-size: 11px;
+        color: var(--ion-color-primary);
+      }
+
+    }
+  }
+}

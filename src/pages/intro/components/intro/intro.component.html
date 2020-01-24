@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>ConsciousCoach</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openOptions()">
+        <ion-icon slot="icon-only" color="white" size="small" name="more" mode="md"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content padding>
+  <ng-container *ngIf="auth$.user$ | async as user">
+    <h1>Hello, {{ user.fullname && user.fullname.split(' ')[0] }}</h1>
+    <div class="subtext">What Are You Looking For?</div>
+
+    <div class="grid">
+      <app-simple-item *ngFor="let item of categories" (click)="gotoPage(item.url)">
+        <ion-icon src="{{ item.icon }}"></ion-icon>
+        <span>{{ item.text }}</span>
+      </app-simple-item>
+    </div>
+  </ng-container>
+
+<ion-item>
+  <ion-card *ngFor="let item of categories" (click)="gotoPage(item.url)">
+    <ion-title>{{item.text}}</ion-title>
+  </ion-card>
+</ion-item> 
+</ion-content>

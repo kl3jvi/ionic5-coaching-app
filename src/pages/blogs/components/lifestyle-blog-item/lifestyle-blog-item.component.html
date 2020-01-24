@@ -1,0 +1,35 @@
+<div class="lifestyle">
+
+  <div class="lifestyle__author" *ngIf="blog.user">
+    <div class="lifestyle__author__image" [image-loader]="blog.user.picture"></div>
+    <div class="lifestyle__author__name">{{blog.user.fullname | slice: 0: 20}}</div>
+    <div class="lifestyle__author__date">{{blog.created_at | date}}</div>
+  </div>
+
+  <div class="lifestyle__title">{{blog.title}}</div>
+
+  <div class="lifestyle__images" *ngIf="blog.images">
+    <div class="gallery" *ngFor="let i of rows;">
+      <div class="gallery__item gallery__item--{{j+1}}"
+        *ngFor="let image of blog.images | slice:(i*numberPerRow):(i+1)*numberPerRow; let j = index">
+        <div [image-loader]="image" class="gallery__img">
+          <span class="more" *ngIf="blog.images.length > 4 && j === 2">+{{blog.images.length - 4}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lifestyle__content">
+    <div class="lifestyle__content__desc">{{blog.content}}</div>
+    <div class="lifestyle__content__social">
+      <div class="lifestyle__content__social__item">
+        <ion-icon src="./assets/icon/heart.svg"></ion-icon>
+        <span>{{blog.likes.length}}</span>
+      </div>
+      <div class="lifestyle__content__social__item">
+        <ion-icon src="./assets/icon/chat.svg"></ion-icon>
+        <span>{{blog.comments.length}}</span>
+      </div>
+    </div>
+  </div>
+</div>

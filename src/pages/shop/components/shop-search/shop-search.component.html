@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button menu (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Search</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="gotoPage(routes.shopBasket)">
+        <ion-icon slot="icon-only" mode="md" color="white" name="basket"></ion-icon>
+        <span class="basket-amount">{{basketService.cartItems.length > 0 ? basketService.cartItems.length : '' }}</span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="white">
+    <app-search-bar (event)="getProducts($event)"></app-search-bar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status">
+    <div class="grid">
+      <app-simple-item *ngFor="let item of products" (click)="shopItem(item)">
+        <ion-icon src="assets/icon/star.svg"></ion-icon>
+        <div class="img" [image-loader]="item.image"></div>
+        <span class="name">{{item.name.toLowerCase()}}</span>
+        <span class="price">{{item.price | currency}}</span>
+      </app-simple-item>
+    </div>
+
+    <app-empty-data *ngIf="products.length === 0" [config]="{
+    title: 'No Products', 
+    subtitle: 'No products found, use search to find products by name', 
+    showImage: true}">
+    </app-empty-data>
+  </app-spinner>
+</ion-content>

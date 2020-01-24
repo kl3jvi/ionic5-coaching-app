@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button color="light" text=""></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <app-spinner [status]="status">
+    <ng-container *ngIf="blog">
+      <div class="header-image" [image-loader]="blog.images[0]">
+        <span class="type">{{blog.type}}</span>
+      </div>
+      <div class="content">
+        <h1 class="title">{{blog.title}}</h1>
+        <div class="sub">{{blog.created_at | date}} by <span class="author">{{blog.user.fullname}}</span></div>
+        <p>{{blog.content}}</p>
+        <p>{{blog.content}}</p>
+        <p>{{blog.content}}</p>
+      </div>
+    </ng-container>
+  </app-spinner>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button (click)="like()">
+          <ion-icon src="assets/icon/heart.svg" size="small" color="medium" *ngIf="!likedByUser"></ion-icon>
+          <ion-icon name="heart" size="small" color="danger" *ngIf="likedByUser"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="comment()">
+          <ion-icon src="assets/icon/bubble.svg" size="small" color="medium"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="share()">
+          <ion-icon src="assets/icon/link.svg" size="small" color="medium"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button *ngIf="blog?.uid === auth$.user?.uid" (click)="edit()">
+          <ion-icon src="assets/icon/spell-check.svg" size="small" color="medium"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button *ngIf="blog?.uid === auth$.user?.uid" (click)="delete()">
+          <ion-icon src="assets/icon/trash.svg" size="small" color="danger"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

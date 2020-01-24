@@ -1,0 +1,60 @@
+:host {
+  display: block;
+  width: 100%;
+
+  .diet {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 1px 1px 15px 1px rgba(var(--ion-color-stable-rgb), 0.2);
+    border-radius: 6px;
+
+    &__image {
+      height: 150px;
+      width: inherit;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &__content {
+      padding: 10px 0;
+
+      &__title {
+        font-size: 14px;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      &__desc {
+        font-size: 12px;
+        font-weight: 300;
+        padding: 10px 0;
+      }
+
+      &__author {
+        display: flex;
+        align-items: center;
+
+        &__image {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+
+        &__name {
+          font-size: 13px;
+          flex: 1;
+          color: var(--ion-color-medium);
+        }
+
+        &__date {
+          font-size: 11px;
+          color: var(--ion-color-primary);
+        }
+      }
+    }
+  }
+}

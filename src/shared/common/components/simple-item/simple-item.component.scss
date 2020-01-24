@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  border-radius: 6px;
+  margin: 10px;
+  box-shadow: 1px 1px 15px 1px rgba(var(--ion-color-stable-rgb), 0.2);
+  padding: 10px 10px;
+
+  .prefix,
+  .suffix,
+  .content {
+    display: flex;
+  }
+
+  .prefix {
+     border-right: medium;
+  }
+
+  .content {
+    flex-direction: column;
+    flex: 1;
+    padding: 10px;
+  }
+}

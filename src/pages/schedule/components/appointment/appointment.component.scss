@@ -1,0 +1,59 @@
+:host {
+  app-simple-item {
+    align-items: center;
+    padding: 10px 20px;
+
+    .picture {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .description {
+      padding-left: 16px;
+
+      .name {
+        font-weight: 600;
+      }
+
+      .skill {
+        font-size: 14px;
+        color: var(--ion-color-stable);
+      }
+    }
+
+    &.detail {
+      ::ng-deep {
+        .content {
+          padding: 0;
+        }
+      }
+    }
+
+    ::ng-deep {
+      .content {
+        justify-content: center;
+
+        h5 {
+          margin: 0;
+        }
+
+        ion-datetime {
+          --padding-top: 0;
+          --padding-bottom: 0;
+        }
+
+        textarea {
+          outline: 0;
+          background: transparent;
+          border: 0;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .submit {
+    margin: 20px;
+  }
+}

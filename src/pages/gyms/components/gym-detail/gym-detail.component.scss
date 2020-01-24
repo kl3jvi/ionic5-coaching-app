@@ -1,0 +1,88 @@
+:host {
+  .wrapper {
+    width: 100%;
+    height: 100%;
+
+    .images {
+      height: 55vh;
+      width: 100%;
+
+      .overlay {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: inherit;
+        width: inherit;
+        background: linear-gradient(
+          to bottom,
+          transparent 50%,
+          var(--ion-color-white) 100%
+        );
+      }
+    }
+
+    .content {
+      padding: 0 20px;
+      margin-top: -30px;
+
+      .name {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .sub-desc {
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        color: var(--ion-color-medium);
+
+        app-rating {
+          justify-content: flex-end;
+          display: flex;
+          flex: 1;
+        }
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0;
+      }
+
+      .about,
+      .open-times,
+      .people {
+        h4 {
+          margin-bottom: 5px;
+        }
+
+        p,
+        li {
+          font-size: 14px;
+          color: var(--ion-color-medium);
+        }
+
+        .staff {
+          display: flex;
+          overflow-x: auto;
+
+          app-simple-item {
+            margin: 5px;
+            padding: 5px;
+
+            ::ng-deep {
+              padding: 5px;
+
+              .photo {
+                width: 100px;
+                height: 130px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

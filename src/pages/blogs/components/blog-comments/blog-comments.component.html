@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Comments</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <app-spinner [status]="status">
+    <app-simple-item *ngFor="let item of comments">
+      <div class="profile" prefix [image-loader]="item.picture"></div>
+      <div content>
+        <h2>{{item.name}}</h2>
+        <p>{{item.text}}</p>
+        <span>{{item.date | date}}</span>
+      </div>
+      <div class="actions" suffix *ngIf="item.uid === user.uid">
+        <ion-icon tappable src="assets/icon/pencil.svg" (click)="edit(item)"></ion-icon>
+        <ion-icon tappable src="assets/icon/trash.svg" (click)="delete(item)"></ion-icon>
+      </div>
+    </app-simple-item>
+    <app-empty-data *ngIf="comments && comments.length === 0" [config]="{
+    title: 'No Comments', 
+    subtitle: 'No comments on this post', 
+    showImage: true}">
+    </app-empty-data>
+  </app-spinner>
+
+
+</ion-content>
+
+<ion-footer>
+  <form-field color="light" [shape]="false">
+    <textarea inputRef elastic-textarea="25" [(ngModel)]="message" style="width: 100%; border:none;"></textarea>
+    <ion-button suffix size="small" fill="clear" (click)="add(message)">
+      <ion-icon name="send"></ion-icon>
+    </ion-button>
+  </form-field>
+</ion-footer>

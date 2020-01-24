@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-title>Schedule</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()" color="white">
+        <ion-icon slot="icon-only" mode="md" color="white" size="small" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status" *ngIf="trainer">
+    <ng-container *ngIf="view === 'calendar'">
+      <app-calendar #calendar (event)="getAvailableTimes()"></app-calendar>
+      <div class="available-times-list">
+        <h3 class="title">Available times</h3>
+        <div class="grid-container">
+          <div class="item {{item.available}}" tappable *ngFor="let item of availableTimes"
+            (click)="item.available !== 'other' ? open(item.hour, item.appointment) : notAvailableAlert();">
+            {{item.hour}}</div>
+        </div>
+      </div>
+    </ng-container>
+
+  </app-spinner>
+</ion-content>

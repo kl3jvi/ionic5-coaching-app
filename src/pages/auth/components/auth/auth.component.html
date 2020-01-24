@@ -1,0 +1,25 @@
+<ion-content>
+  <div class="container" image-loader="./assets/images/bg/bg-fitness.jpg"> 
+    <div class="container__content">
+      <div class="container__content__center">
+        <div class="title">ConsciousCoach</div>
+        <div class="subtitle">Empowering Lives Through Digital Community
+        </div>
+        <div class="subtitle">Thousand of Fully Verified Coaches, Mentors & Chefs on Demand
+        </div>
+
+        <div class="login-options">
+          <ion-button expand="block" shape="round" fill="outline" color="primary" (click)="gotoPage(routes.login)">
+            Sign in with email</ion-button>
+          <ion-button expand="block" shape="round" color="google" (click)="googleSignIn()">
+            Sign in with google
+          </ion-button>
+        </div>
+
+      </div>
+    </div>
+    <div class="other-options">
+      <p>Don't have an account? <a (click)="gotoPage(routes.register)">Sign up</a></p>
+    </div>
+  </div>
+</ion-content>

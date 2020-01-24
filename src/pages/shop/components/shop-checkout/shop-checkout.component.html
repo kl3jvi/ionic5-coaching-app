@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <!-- <ion-buttons slot="start">
+      <ion-button menu (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+    <ion-title>Checkout</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" color="white" size="small" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status">
+    <app-accordion #accordion>
+      <app-expansion-panel *ngFor="let item of checkoutOptions">
+        <ng-template #title>
+          <ion-icon name="checkmark" *ngIf="item.completed"></ion-icon>
+          <div class="title">{{ item.title }}</div>
+        </ng-template>
+
+        <ng-template #body>
+          <ng-container [ngSwitch]="item.key">
+            <ng-container *ngSwitchCase="'personal'">
+              <app-checkout-personal
+                [input]="checkout.personal"
+                (output)="(checkout.personal)"
+              ></app-checkout-personal>
+            </ng-container>
+            <ng-container *ngSwitchCase="'billing'">
+              <app-checkout-address
+                [type]="'billing'"
+                [input]="checkout.billing"
+                (output)="model.billing = $event"
+              ></app-checkout-address>
+            </ng-container>
+            <ng-container *ngSwitchCase="'shipping'">
+              <app-checkout-address
+                [type]="'shipping'"
+                [input]="checkout.shipping"
+                (output)="model.shipping = $event"
+              ></app-checkout-address>
+            </ng-container>
+            <ng-container *ngSwitchCase="'payment'">
+              <app-checkout-payment
+                [input]="checkout.payment"
+                (output)="model.payment = $event"
+              ></app-checkout-payment>
+            </ng-container>
+            <ng-container *ngSwitchDefault> NOTHING TO SHOW HERE</ng-container>
+          </ng-container>
+        </ng-template>
+      </app-expansion-panel>
+    </app-accordion>
+  </app-spinner>
+</ion-content>
+<ion-footer padding>
+  <ion-button expand="block" shape="round" (click)="pay()">
+    Pay & Continue
+  </ion-button>
+</ion-footer>

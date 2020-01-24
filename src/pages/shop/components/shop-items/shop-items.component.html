@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-back-button color="light" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{category}}s</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="gotoPage(routes.shopBasket)">
+        <ion-icon slot="icon-only" mode="md" color="white" name="basket"></ion-icon>
+        <span class="basket-amount">{{basketService.cartItems.length > 0 ? basketService.cartItems.length : '' }}</span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status">
+    <div class="grid">
+      <app-simple-item *ngFor="let item of products">
+        <div class="actions">
+          <ion-icon [name]="!item.alreadyWishListed ? 'star': 'star-outline'"
+            [color]="!item.alreadyWishListed ? 'danger': 'medium'" (click)="add2Wishlist(item)"></ion-icon>
+
+          <ion-icon name="cart" color="primary" tappable (click)="add2Cart(item)"></ion-icon>
+        </div>
+
+        <div class="img" [image-loader]="item.image" (click)="shopItem(item)"></div>
+        <span class="name" (click)="shopItem(item)">{{item.name.toLowerCase()}}</span>
+        <span class="price" (click)="shopItem(item)">{{item.price | currency}}</span>
+      </app-simple-item>
+    </div>
+
+    <app-empty-data *ngIf="products.length === 0" [config]="{
+    title: 'No Products', 
+    subtitle: 'No products found', 
+    showImage: true}">
+    </app-empty-data>
+  </app-spinner>
+</ion-content>

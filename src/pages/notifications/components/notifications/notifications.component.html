@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-back-button color="light" text=""></ion-back-button>
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Notifications</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openOptions()">
+        <ion-icon slot="icon-only" color="white" size="small" name="more" mode="md"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <app-spinner [status]="status">
+    <ng-container *ngFor="let item of notifications; let i = index">
+      <ng-container [ngSwitch]="item.type">
+
+        <app-simple-item [class]="item.type" *ngSwitchCase="'blog'" (click)="notificationMenu(item, i)">
+          <div class="picture" prefix [image-loader]="item.context.picture"></div>
+          <div class="title">{{item.title}}</div>
+          <div class="description">{{item.description}}</div>
+          <ion-icon suffix name="checkmark" *ngIf="item.complete"></ion-icon>
+          <ion-icon suffix name="radio-button-on" *ngIf="item.read"></ion-icon>
+        </app-simple-item>
+
+        <app-simple-item [class]="item.type" *ngSwitchCase="'gym'" (click)="notificationMenu(item, i)">
+          <div class="title">{{item.title}}</div>
+          <div class="description">{{item.description}}</div>
+          <ion-icon suffix name="checkmark" *ngIf="item.complete"></ion-icon>
+          <ion-icon suffix name="radio-button-on" *ngIf="item.read"></ion-icon>
+        </app-simple-item>
+
+        <app-simple-item [class]="item.type" *ngSwitchCase="'trainer'" (click)="notificationMenu(item, i)">
+          <div class="picture" prefix [image-loader]="item.context.picture"></div>
+          <div class="title">{{item.title}}</div>
+          <div class="description">{{item.description}}</div>
+          <ion-icon suffix name="checkmark" *ngIf="item.complete"></ion-icon>
+          <ion-icon suffix name="radio-button-on" *ngIf="item.read"></ion-icon>
+        </app-simple-item>
+
+        <app-simple-item [class]="item.type" *ngSwitchCase="'schedule'" (click)="notificationMenu(item, i)">
+          <div class="dates" prefix>
+            <span>{{item.start | date: 'MMM dd, yy'}}</span>
+            <span>{{item.end | date: 'MMM dd, yy'}}</span>
+          </div>
+          <div class="title">{{item.title}}</div>
+          <div class="description">{{item.description}}</div>
+          <div class="trainer"> Appointment with {{item.context.fullname}}</div>
+          <ion-icon suffix name="checkmark" *ngIf="item.complete"></ion-icon>
+          <ion-icon suffix name="radio-button-on" *ngIf="item.read"></ion-icon>
+        </app-simple-item>
+
+        <app-simple-item [class]="item.type" *ngSwitchDefault (click)="notificationMenu(item, i)">
+          <ion-icon size="large" name="information-circle-outline" prefix></ion-icon>
+          <div class="title">{{item.title}}</div>
+          <div class="description">{{item.description}}</div>
+          <ion-icon suffix name="checkmark" *ngIf="item.complete"></ion-icon>
+          <ion-icon suffix name="radio-button-on" *ngIf="item.read"></ion-icon>
+        </app-simple-item>
+
+      </ng-container>
+    </ng-container>
+  </app-spinner>
+</ion-content>

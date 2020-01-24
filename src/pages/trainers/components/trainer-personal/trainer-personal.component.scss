@@ -1,0 +1,72 @@
+:host {
+  app-simple-item {
+    margin: 15px;
+
+    ::ng-deep {
+      .content {
+        overflow: hidden;
+      }
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 12px;
+      color: var(--ion-color-medium);
+      margin: 10px 0 0;
+    }
+  }
+
+  ion-slides {
+    width: 100%;
+
+    ion-slide {
+      blockquote {
+        font-size: 14px;
+        margin: 0 0 30px;
+        font-family: Open Sans;
+        font-style: italic;
+        color: var(--ion-color-dark);
+        padding-left: 15px;
+        line-height: 1.6;
+        position: relative;
+
+        h2 {
+          margin: 0;
+          font-size: 14px;
+        }
+
+        p {
+          font-size: 12px;
+          color: var(--ion-color-medium);
+          margin: 5px 0 0;
+        }
+
+        span {
+          p {
+            font-size: 10px;
+            color: var(--ion-color-primary);
+            margin: 5px 0 0;
+          }
+        }
+
+        &::before {
+          font-family: Arial;
+          content: "\201C";
+          color: var(--ion-color-light);
+          font-size: 4em;
+          position: absolute;
+          left: -5px;
+          top: -25px;
+        }
+
+        &::after {
+          content: '';
+        }
+      }
+    }
+  }
+}

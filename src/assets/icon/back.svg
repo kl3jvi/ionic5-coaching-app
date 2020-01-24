@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="31px" viewBox="0 0 17 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Travel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Reviews-#2" transform="translate(-40.000000, -88.000000)" fill="currentColor">
+            <g id="Top-bar">
+                <path d="M55.319852,88.2898998 L39.9999,103.679056 L54.9626357,118.710347 C55.1545287,118.90312 55.4064498,119 55.6583709,119 C55.910292,119 56.1612291,118.90312 56.3541062,118.710347 C56.7378922,118.323814 56.7378922,117.699035 56.3541062,117.312501 L42.7828409,103.679056 L56.7113224,89.6877456 C57.0960925,89.3012126 57.0960925,88.6764328 56.7113224,88.2898998 C56.3265523,87.9033667 55.7046221,87.9033667 55.319852,88.2898998 Z" id="Icon"></path>
+            </g>
+        </g>
+    </g>
+</svg>

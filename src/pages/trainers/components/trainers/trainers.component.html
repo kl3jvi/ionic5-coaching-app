@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button menu (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Coaches</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openSearch = !openSearch" color="white">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/search.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="search" *ngIf="openSearch">
+    <app-search-bar (event)="filter($event)"></app-search-bar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status">
+
+
+
+    <app-simple-item *ngFor="let item of trainers; let i = index" (click)="gotoPage(routes.trainers + '/' + item.id)">
+      <div class="profile" prefix [image-loader]="item.picture">
+        <div class="online-badge" *ngIf="i%3 === 0"></div>
+      </div>
+      <div class="detail">
+        <div class="name">{{item.fullname}}</div>
+        <div class="skill">{{item.skill}}</div>
+        <div class="city">{{item.city}}</div>
+      </div>
+      <div class="rating" suffix>
+        <ion-icon name="star" color="primary"></ion-icon>{{item.rating}}
+      </div>
+    </app-simple-item>
+
+    <app-empty-data *ngIf="trainers && trainers.length === 0" config="{
+      title: 'No trainers available',
+      subtitle: 'Maybe you want to widen your search a bit', 
+      showImage: true}">
+    </app-empty-data>
+
+
+
+  </app-spinner>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button menu (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Shop</ion-title>
+    <!-- <ion-buttons slot="end">
+      <ion-button (click)="openOptions()">
+        <ion-icon slot="icon-only" color="white" size="small" name="more" mode="md"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status">
+    <div class="grid">
+      <app-simple-item *ngFor="let item of categories" (click)="gotoPage(routes.shopHome + '/' + item.code)">
+        <img [src]="item.icon" alt="">
+        <span>{{item.text}}</span>
+      </app-simple-item>
+    </div>
+  </app-spinner>
+</ion-content>

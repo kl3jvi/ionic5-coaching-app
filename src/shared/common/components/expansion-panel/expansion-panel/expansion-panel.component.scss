@@ -1,0 +1,29 @@
+:host {
+  width: 100%;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+    color: var(--ion-color-medium);
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--ion-color-light);
+
+    i {
+      transition: transform 0.2s;
+    }
+
+    &.open {
+      background: var(--ion-color-light);
+
+      i {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

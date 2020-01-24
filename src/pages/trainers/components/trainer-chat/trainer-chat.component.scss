@@ -1,0 +1,113 @@
+:host {
+  .clear {
+    clear: both
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .date {
+    font-size: 9px;
+    text-align: right;
+    display: block;
+    margin-top: 3px;
+  }
+
+  .from-me {
+    position: relative;
+    padding: 10px 15px;
+    color: var(--ion-color-white);
+    background: var(--ion-color-secondary);
+    border-radius: 15px;
+    float: right;
+    margin: 10px 0;
+
+    .date {
+      color: var(--ion-color-white);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      bottom: -2px;
+      right: -7px;
+      height: 20px;
+      border-right: 20px solid var(--ion-color-secondary);
+      border-bottom-left-radius: 16px 14px;
+      transform: translate(0, -2px);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      bottom: -2px;
+      right: -56px;
+      width: 26px;
+      height: 20px;
+      background: var(--ion-color-white);
+      border-bottom-left-radius: 10px;
+      transform: translate(-30px, -2px);
+    }
+  }
+
+  .from-them {
+    position: relative;
+    padding: 10px 15px;
+    background: var(--ion-color-light);
+    border-radius: 15px;
+    color: var(--ion-color-medium);
+    float: left;
+    margin: 10px 0;
+
+    .date {
+      color: var(--ion-color-stable);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      bottom: -2px;
+      left: -7px;
+      height: 20px;
+      border-left: 20px solid var(--ion-color-light);
+      border-bottom-right-radius: 16px 14px;
+      transform: translate(0, -2px);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      bottom: -2px;
+      left: 4px;
+      width: 26px;
+      height: 20px;
+      background: var(--ion-color-white);
+      border-bottom-right-radius: 10px;
+      transform: translate(-30px, -2px);
+    }
+  }
+
+  ion-footer {
+    border-top: 3px solid var(--ion-color-light);
+    padding: 5px 20px;
+
+    form-field {
+      ::ng-deep {
+        .input-wrapper {
+          padding: 0;
+
+          textarea {
+            outline: none;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}

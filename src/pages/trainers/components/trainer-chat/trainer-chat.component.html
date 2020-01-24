@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-title>{{trainer?.fullname}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()" color="white">
+        <ion-icon slot="icon-only" mode="md" color="white" size="small" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <app-spinner [status]="status">
+    <div *ngFor="let chat of chat?.messages; let i = index; let last = last" [id]="last ? 'last-item': 'item' + i">
+      <div [ngClass]="chat.uid === auth$.user.uid ? 'from-me': 'from-them'">
+        <p [innerHTML]="chat.content"></p>
+        <span class="date">{{chat.createdAt | amTimeAgo}}</span>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </app-spinner>
+</ion-content>
+
+<ion-footer padding>
+  <form-field color="light" [shape]="false">
+    <textarea inputRef elastic-textarea="25" [(ngModel)]="message" style="width: 100%"></textarea>
+    <ion-button suffix size="small" fill="clear" (click)="sendMessage(message)">
+      <ion-icon name="send"></ion-icon>
+    </ion-button>
+  </form-field>
+</ion-footer>

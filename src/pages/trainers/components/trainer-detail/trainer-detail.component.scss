@@ -1,0 +1,75 @@
+:host {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header-profile {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 160px;
+      width: 80%;
+
+      ion-icon {
+        font-size: 20px;
+        border-radius: 50%;
+        border: 1px solid var(--ion-color-stable);
+        padding: 10px;
+        color: var(--ion-color-white);
+        background: var(--ion-color-gradient-dark);
+      }
+
+      .profile-image {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        box-shadow: 1px 1px 15px 1px rgba(var(--ion-color-dark-rgb), 0.2);
+      }
+    }
+
+    .name {
+      font-weight: 600;
+      font-size: 17px;
+      margin: 0 0 5px;
+    }
+
+    .skill {
+      font-size: 14px;
+      color: var(--ion-color-medium);
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      margin: 5px 0 0;
+
+      app-rating {
+        margin-right: 5px;
+      }
+    }
+
+    .reviews {
+      font-size: 10px;
+      margin: 0 0 10px;
+    }
+  }
+
+  .content {
+    margin: 20px 10px;
+
+    app-simple-item {
+      align-items: center;
+
+      ion-icon {
+        padding: 0 10px;
+      }
+
+      span {
+        border-left: 1px solid var(--ion-color-stable);
+        padding-left: 20px;
+      }
+    }
+  }
+}

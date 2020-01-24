@@ -1,0 +1,61 @@
+ion-content {
+  --background: var(--ion-color-light);
+  --color: var(--ion-color-dark);
+  
+  .container {
+    height: 100%;
+    text-align: center;
+    background-blend-mode: overlay;
+    background-color: rgba(white, 0.7);
+    background-position: right !important;
+
+    &__content {
+      position: relative;
+      text-align: center;
+      display: block;
+      height: 90%;
+
+      &::before,
+      &__center {
+        display: inline-block;
+        vertical-align: middle;
+
+      }
+
+      &::before {
+        content: '';
+        width: 0;
+        height: 100%;
+      }
+
+      &__center {
+        width: 80%;
+
+        .icon {
+          width: 100px;
+          height: 100px;
+        }
+
+        .title {
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 15px;
+        }
+
+        .subtitle {
+          font-size: 14px;
+          font-weight: 400;
+          color: var(--ion-color-medium-shade);
+        }
+
+        .login-options {
+          margin: 30px 0 0;
+
+          ion-button {
+            margin: 25px 0;
+          }
+        }
+      }
+    }
+  }
+}

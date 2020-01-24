@@ -1,0 +1,13 @@
+<div>
+  <div class="header" (click)="onClick()" [ngClass]="{ open: isBodyVisible }">
+    <ng-template [ngTemplateOutlet]="titleTemplate">
+    </ng-template>
+    <ion-icon slot="start" name="arrow-forward" *ngIf="!isBodyVisible"></ion-icon>
+    <ion-icon slot="start" name="arrow-down" *ngIf="isBodyVisible"></ion-icon>
+  </div>
+
+  <div class="body" *ngIf="isBodyVisible">
+    <ng-template [ngTemplateOutlet]="bodyTemplate">
+    </ng-template>
+  </div>
+</div>

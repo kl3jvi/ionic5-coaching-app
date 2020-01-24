@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  padding: 10px 0;
+  .payment-methods {
+    height: 70px;
+    width: 100%;
+    background-size: contain !important;
+  }
+}

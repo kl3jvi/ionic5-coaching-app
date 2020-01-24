@@ -1,0 +1,17 @@
+:host {
+    display: block;
+    width: 100%;
+
+    .search {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px 10px 10px;
+
+        input {
+            width: 100%;
+            padding: 0 0 0 12px;
+            outline: none;
+            border: none;
+        }
+    }
+}

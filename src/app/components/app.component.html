@@ -1,0 +1,29 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu>
+      <ion-content>
+        <div class="container">
+          <div class="profile" *ngIf="auth$.user$ | async as user" (click)="gotoPage(routes.profile)">
+            <div class="profile__image" [image-loader]="user.profileImage"></div>
+            <div class="profile__title">{{ user.fullname }}</div>
+          </div>
+          <div class="menu-list">
+            <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+              <div class="menu-list__item" routerLinkActive="active" [routerDirection]="'root'" [routerLink]="[p.url]">
+                <ion-icon slot="start" [src]="p.icon"></ion-icon>
+                <span>{{ p.title }}</span>
+              </div>
+            </ion-menu-toggle>
+          </div>
+          <div class="menu-footer" *ngIf="auth$.user$ | async as user">
+            <div class="menu-list__item" (click)="auth$.signOut(); toggleMenu()">
+              <ion-icon slot="start" src="assets/icon/logout.svg"></ion-icon>
+              <span>Logout</span>
+            </div>
+          </div>
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main #mainRoute animated="false"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

@@ -1,0 +1,23 @@
+<ng-container *ngIf="isSuccessful">
+  <img src="./assets/images/other/success.gif" alt="" />
+  <div class="wrapper">
+    <h1>Payment Successful!</h1>
+    <p>Congrats, your order is on its way. A payment of {{total | ccurrency}} will be taken from your account. Want to
+      shop some
+      more? Return to shop front</p>
+    <ion-button shape="round" (click)="clear(); gotoPage(routes.shopHome)">Shop Front</ion-button>
+    <br />
+    <ion-button shape="round" color="light" (click)="clear(); gotoPage(routes.profile)">Home</ion-button>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!isSuccessful">
+  <img src="./assets/images/other/fail.gif" alt="" />
+  <div class="wrapper">
+    <h1>Payment Failed!</h1>
+    <p>Ohh no, Payment failed, return to basket to retry</p>
+    <ion-button shape="round" color="danger" (click)="gotoPage(routes.shopBasket)">Basket</ion-button>
+    <br />
+    <ion-button shape="round" color="light" (click)="clear(); gotoPage(routes.profile)">Home</ion-button>
+  </div>
+</ng-container>

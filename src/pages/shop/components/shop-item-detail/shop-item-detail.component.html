@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button (click)="gotoPage(routes.shopBasket); closeModal()">
+        <ion-icon slot="icon-only" mode="md" color="white" name="basket"></ion-icon>
+        <span class="basket-amount">{{basketService.cartItems.length > 0 ? basketService.cartItems.length : '' }}</span>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Detail</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" color="white" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <app-spinner [status]="status">
+    <div class="header">
+      <div class="name">{{product.name}}</div>
+      <div class="price">{{product.price | currency}}</div>
+      <div class="image" [image-loader]="product.image"></div>
+    </div>
+    <div class="content">
+      <div class="options">
+        <div class="item">Size
+          <form-field outline="true" color="medium" class="select-menu">
+            <ion-select inputRef [(ngModel)]="model.size">
+              <ion-select-option [selected]="i === 0" *ngFor="let item of product.sizes; let i = index" [value]="item">
+                {{item}}
+              </ion-select-option>
+            </ion-select>
+          </form-field>
+        </div>
+        <div class="space"></div>
+        <div class="item">Flavour
+          <form-field outline="true" color="medium" class="select-menu">
+            <ion-select inputRef [(ngModel)]="model.flavour">
+              <ion-select-option [selected]="i === 0" *ngFor="let item of product.flavours; let i  = index">{{item}}
+              </ion-select-option>
+            </ion-select>
+          </form-field>
+        </div>
+      </div>
+
+      <ion-button expand="block" color="gradient" shape="round" (click)="add2Cart(model)">
+        <ion-icon src="assets/icon/cart.svg" slot="end"></ion-icon>
+        Add to Cart
+      </ion-button>
+
+      <app-rating [rate]="product.rating"></app-rating>
+      <div class="description">{{product.description}}</div>
+    </div>
+  </app-spinner>
+</ion-content>

@@ -1,0 +1,84 @@
+:host {
+  app-calendar {
+    display: block;
+    background: var(--ion-color-gradient);
+
+    ::ng-deep {
+      .header {
+
+        ion-button,
+        ion-select {
+          --color: var(--ion-color-white);
+          color: var(--ion-color-white);
+        }
+      }
+
+      .grid {
+        .week-day-label {
+          color: var(--ion-color-white);
+        }
+
+        .day {
+          color: var(--ion-color-white);
+
+          &.not-settable {
+            span {
+              color: var(--ion-color-light);
+            }
+          }
+
+          &.selected {
+            span {
+              color: var(--ion-color-primary);
+              background: var(--ion-color-white);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .event-list {
+    padding: 0 0 10px 0;
+
+    .event-list-header {
+      padding: 20px 20px 10px;
+      font-weight: 600;
+      background: var(--ion-color-gradient);
+      color: var(--ion-color-white);
+    }
+
+    app-simple-item {
+      ::ng-deep {
+        .prefix {
+          border-left: 5px solid var(--ion-color-secondary);
+          align-items: center;
+          padding-right: 10px;
+        }
+
+        .content {
+          padding: 5px;
+
+          p {
+            margin: 2px 0;
+            font-size: 13px;
+
+            &.title {
+              font-size: 14px;
+              font-weight: 600;
+            }
+
+            &.date {
+              font-size: 12px;
+              color: var(--ion-color-primary);
+            }
+          }
+        }
+      }
+    }
+
+    ion-button {
+      margin: 10px 20px 0;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button menu (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Account</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="gotoPage(routes.shopBasket)">
+        <ion-icon slot="icon-only" mode="md" color="white" name="basket"></ion-icon>
+        <span class="basket-amount">{{basketService.cartItems.length > 0 ? basketService.cartItems.length : '' }}</span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar color="gradient">
+    <ion-segment color="white" mode="md" (ionChange)="segmentChange = !segmentChange">
+      <ion-segment-button checked="!segmentChange">
+        <ion-label>Information</ion-label>
+      </ion-segment-button>
+      <ion-segment-button checked="segmentChange">
+        <ion-label>WishList</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <app-spinner [status]="status">
+    <ng-container *ngIf="segmentChange">
+
+      <app-simple-item *ngIf="auth$.user$ | async as user">
+        <h4>Personal Information</h4>
+
+        <ol class="desc">
+          <li *ngFor="let item of personalInfo"><strong>{{item}}</strong>
+            {{user[item] || 'No data'}}</li>
+        </ol>
+      </app-simple-item>
+
+      <app-simple-item>
+        <h4>Recent Orders</h4>
+
+        <app-simple-item class="order-history" *ngFor="let item of orderHistory">
+          <div class="detail" (click)="shopItem(item)">
+            <span class="name"><strong>Order Number</strong> {{item.orderNumber}}</span>
+            <span class="price"><strong> Order total</strong> {{item.total | currency}}</span>
+          </div>
+
+
+        </app-simple-item>
+
+        <app-empty-data *ngIf="orderHistory && orderHistory.length === 0" [config]="{
+          title: 'No Recent Orders',
+          showImage: true}">
+        </app-empty-data>
+
+      </app-simple-item>
+    </ng-container>
+
+    <ng-container *ngIf="!segmentChange">
+
+      <app-simple-item class="wishlist" *ngFor="let item of wishListProducts">
+        <div class="image" (click)="shopItem(item)" prefix [image-loader]="item.image"></div>
+        <div class="detail" (click)="shopItem(item)">
+          <span class="name">{{item.name.toLowerCase()}}</span>
+          <span class="price">{{item.price | currency}}</span>
+        </div>
+
+        <div class="actions" suffix>
+          <ion-icon src="assets/icon/trash.svg" (click)="removeWishItem(item)"></ion-icon>
+        </div>
+      </app-simple-item>
+
+    </ng-container>
+
+  </app-spinner>
+</ion-content>

@@ -1,0 +1,13 @@
+<div class="fitness">
+  <div class="fitness__image" [image-loader]="blog.images[0]" *ngIf="blog.images">
+  </div>
+  <div class="fitness__content">
+    <div class="fitness__content__title">{{blog.title}}</div>
+    <div class="fitness__content__desc">{{blog.content | slice: 0: 50}}</div>
+    <div class="fitness__content__author" *ngIf="blog.user">
+      <div class="fitness__content__author__image" [image-loader]="blog.user.picture"></div>
+      <div class="fitness__content__author__name">{{blog.user.fullname | slice: 0: 20}}</div>
+      <div class="fitness__content__author__date">{{blog.created_at | date}}</div>
+    </div>
+  </div>
+</div>

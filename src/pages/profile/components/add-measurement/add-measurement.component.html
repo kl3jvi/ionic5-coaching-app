@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="white">
+    <ion-title>Previous {{goal.title}} </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" color="medium" size="small" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding scrollY="false">
+  <div class="container">
+
+    <div class="item-list">
+      <div class="scroll">
+        <div class="item" *ngFor="let item of items | orderBy: '+date'">
+          {{item.value}} {{goal.units}} <small> on {{item.date | date: 'mediumDate'}}</small>
+        </div>
+
+        <ng-container *ngIf="items && items.length === 0">No Data has been saved</ng-container>
+
+      </div>
+    </div>
+
+    <div class="title">Enter a new {{goal.title}}</div>
+    <form-field outline="true" color="medium">
+      <ion-input inputRef name="{{goal.title}}" placeholder="{{goal.title}}" [(ngModel)]="goal.value" required>
+      </ion-input>
+    </form-field>
+  </div>
+</ion-content>
+<ion-footer padding>
+  <ion-button expand="block" color="primary" shape="round" (click)="save()">
+    Save
+  </ion-button>
+</ion-footer>
