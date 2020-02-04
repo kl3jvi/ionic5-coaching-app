@@ -12,6 +12,7 @@ import { AppCommonModule } from '../shared/common/common.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 import { NativeImports } from './config/native-add-on';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +26,7 @@ import { NativeImports } from './config/native-add-on';
     AngularFireStorageModule,
     HttpClientModule,
     AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     AngularFireAuth,

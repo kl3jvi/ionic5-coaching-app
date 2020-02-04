@@ -17,7 +17,7 @@
       <textarea elastic-textarea="25" [(ngModel)]="appointment.title"></textarea>
     </app-simple-item>
 
-    <app-simple-item *ngIf="auth$.user$ | async as user">
+    <app-simple-item *ngIf="auth$.user$ ">
       <div class="picture" prefix [image-loader]="user.picture"></div>
       <div class="description">
         <div class="name">{{user.fullname}}</div>

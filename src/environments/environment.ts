@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyB0uCM8qsXO6kgJXeNRLehNyikr_whJ890',
-    authDomain: 'coachingapp-99ddb.firebaseapp.com',
-    databaseURL: 'https://coachingapp-99ddb.firebaseio.com',
-    projectId: 'coachingapp-99ddb',
-    storageBucket: 'coachingapp-99ddb.appspot.com',
-    messagingSenderId: '513851903244',
-    appId: '1:513851903244:web:1fd34182a4ab3b4e22cd29'
+    apiKey: "AIzaSyDSoZDo4-tYSakg4IrIeHSQxot7Z2X9f40",
+    authDomain: "last-9a596.firebaseapp.com",
+    databaseURL: "https://last-9a596.firebaseio.com",
+    projectId: "last-9a596",
+    storageBucket: "last-9a596.appspot.com",
+    messagingSenderId: "862421079724",
+    appId: "1:862421079724:web:de00ebbdce6bd9a525b109",
   }
 };
 

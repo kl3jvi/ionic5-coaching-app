@@ -9,7 +9,7 @@ export const trainers = [{
   "city": "Thorpe",
   "email": "cmadigan0@accuweather.com",
   "phone": "44(676)811-4487",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 5,
   "reviewers": 812,
   "achievements": [
@@ -126,7 +126,7 @@ export const trainers = [{
   "city": "London",
   "email": "awoodruff2@cnbc.com",
   "phone": "44(188)364-2194",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 3,
   "reviewers": 885,
   "achievements": [
@@ -348,7 +348,7 @@ export const trainers = [{
   "city": "Glasgow",
   "email": "mguildford6@i2i.jp",
   "phone": "44(397)480-0024",
-  "skill": "Physiotherapist",
+  "skill": "Business Coach",
   "rating": 4,
   "reviewers": 862,
   "achievements": [
@@ -420,7 +420,7 @@ export const trainers = [{
   "city": "Newtown",
   "email": "glisciardelli7@tumblr.com",
   "phone": "44(633)663-0895",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 4,
   "reviewers": 582,
   "achievements": [
@@ -521,7 +521,7 @@ export const trainers = [{
   "city": "Craigavon",
   "email": "tarnald8@vimeo.com",
   "phone": "44(576)379-7271",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 5,
   "reviewers": 800,
   "achievements": [
@@ -1028,7 +1028,7 @@ export const trainers = [{
   "city": "Church End",
   "email": "oaldcornf@sina.com.cn",
   "phone": "44(573)312-7724",
-  "skill": "Physiotherapist",
+  "skill": "Business Coach",
   "rating": 3,
   "reviewers": 573,
   "achievements": [
@@ -1247,7 +1247,7 @@ export const trainers = [{
   "city": "London",
   "email": "wartisti@hp.com",
   "phone": "44(883)248-4874",
-  "skill": "Physiotherapist",
+  "skill": "Business Coach",
   "rating": 4,
   "reviewers": 952,
   "achievements": [
@@ -1333,7 +1333,7 @@ export const trainers = [{
   "city": "Birmingham",
   "email": "lgravellj@fda.gov",
   "phone": "44(764)305-9481",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 4,
   "reviewers": 426,
   "achievements": [
@@ -1439,7 +1439,7 @@ export const trainers = [{
   "city": "Edinburgh",
   "email": "mmcronaldk@ted.com",
   "phone": "44(905)659-6228",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 4,
   "reviewers": 604,
   "achievements": [
@@ -1970,7 +1970,7 @@ export const trainers = [{
   "city": "London",
   "email": "smacterrellys@ebay.co.uk",
   "phone": "44(908)603-9812",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 3,
   "reviewers": 483,
   "achievements": [
@@ -2219,7 +2219,7 @@ export const trainers = [{
   "city": "Kinloch",
   "email": "cdewettw@wikimedia.org",
   "phone": "44(463)837-7962",
-  "skill": "Physiotherapist",
+  "skill": "Business Coach",
   "rating": 4,
   "reviewers": 797,
   "achievements": [
@@ -2299,7 +2299,7 @@ export const trainers = [{
   "city": "Liverpool",
   "email": "tdemseyx@dot.gov",
   "phone": "44(928)139-8555",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 3,
   "reviewers": 583,
   "achievements": [
@@ -2346,7 +2346,7 @@ export const trainers = [{
   "city": "Birmingham",
   "email": "kcastely@va.gov",
   "phone": "44(312)358-1942",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 3,
   "reviewers": 650,
   "achievements": [
@@ -3088,7 +3088,7 @@ export const trainers = [{
   "city": "Upton",
   "email": "aneate18@unc.edu",
   "phone": "44(839)702-2300",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 4,
   "reviewers": 271,
   "achievements": [
@@ -3186,7 +3186,7 @@ export const trainers = [{
   "city": "Merton",
   "email": "kcoughan19@issuu.com",
   "phone": "44(627)279-9037",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 3,
   "reviewers": 305,
   "achievements": [
@@ -3294,7 +3294,7 @@ export const trainers = [{
   "city": "Wootton",
   "email": "efullard1b@linkedin.com",
   "phone": "44(559)879-5088",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 4,
   "reviewers": 654,
   "achievements": [
@@ -3493,7 +3493,7 @@ export const trainers = [{
   "city": "Upton",
   "email": "ahatter1e@miitbeian.gov.cn",
   "phone": "44(821)652-2383",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 4,
   "reviewers": 444,
   "achievements": [
@@ -3579,7 +3579,7 @@ export const trainers = [{
   "city": "Twyford",
   "email": "ttzar1f@ca.gov",
   "phone": "44(832)873-8278",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 5,
   "reviewers": 636,
   "achievements": [
@@ -3652,7 +3652,7 @@ export const trainers = [{
   "city": "Tullich",
   "email": "abelone1g@bbb.org",
   "phone": "44(346)463-3762",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 4,
   "reviewers": 873,
   "achievements": [
@@ -3985,7 +3985,7 @@ export const trainers = [{
   "city": "Whitchurch",
   "email": "ekolodziejski1l@homestead.com",
   "phone": "44(318)483-9491",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 3,
   "reviewers": 968,
   "achievements": [
@@ -4070,7 +4070,7 @@ export const trainers = [{
   "city": "London",
   "email": "rthurman1m@w3.org",
   "phone": "44(381)102-3855",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 4,
   "reviewers": 984,
   "achievements": [
@@ -4138,7 +4138,7 @@ export const trainers = [{
   "city": "Normanton",
   "email": "lsedworth1n@biblegateway.com",
   "phone": "44(816)184-2600",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 4,
   "reviewers": 909,
   "achievements": [
@@ -4447,7 +4447,7 @@ export const trainers = [{
   "city": "Tullich",
   "email": "ebeever1r@godaddy.com",
   "phone": "44(192)441-8182",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 4,
   "reviewers": 764,
   "achievements": [
@@ -4666,7 +4666,7 @@ export const trainers = [{
   "city": "Aberdeen",
   "email": "mandrichuk1u@abc.net.au",
   "phone": "44(131)438-3519",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 5,
   "reviewers": 896,
   "achievements": [
@@ -4739,7 +4739,7 @@ export const trainers = [{
   "city": "Horton",
   "email": "vdonegan1v@fema.gov",
   "phone": "44(678)361-0774",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 5,
   "reviewers": 654,
   "achievements": [
@@ -4830,7 +4830,7 @@ export const trainers = [{
   "city": "Bristol",
   "email": "pbrew1w@hud.gov",
   "phone": "44(682)136-1878",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 4,
   "reviewers": 711,
   "achievements": [
@@ -5029,7 +5029,7 @@ export const trainers = [{
   "city": "Kinloch",
   "email": "kcartmer1y@netscape.com",
   "phone": "44(199)853-6491",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 3,
   "reviewers": 694,
   "achievements": [
@@ -5139,7 +5139,7 @@ export const trainers = [{
   "city": "Twyford",
   "email": "dlesser20@infoseek.co.jp",
   "phone": "44(717)179-2169",
-  "skill": "Physiotherapist",
+  "skill": "Business Coach",
   "rating": 5,
   "reviewers": 688,
   "achievements": [
@@ -5275,7 +5275,7 @@ export const trainers = [{
   "city": "Ford",
   "email": "lhamlet22@a8.net",
   "phone": "44(470)795-9799",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 5,
   "reviewers": 450,
   "achievements": [
@@ -5448,7 +5448,7 @@ export const trainers = [{
   "city": "Newbiggin",
   "email": "pgander24@bizjournals.com",
   "phone": "44(151)214-4629",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 5,
   "reviewers": 890,
   "achievements": [
@@ -5677,7 +5677,7 @@ export const trainers = [{
   "city": "Tullich",
   "email": "bdugald27@ucoz.com",
   "phone": "44(281)471-3565",
-  "skill": "Physiotherapist",
+  "skill": "Business Coach",
   "rating": 3,
   "reviewers": 216,
   "achievements": [
@@ -5883,7 +5883,7 @@ export const trainers = [{
   "city": "Hatton",
   "email": "rdelnevo2a@printfriendly.com",
   "phone": "44(260)871-9870",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 4,
   "reviewers": 581,
   "achievements": [
@@ -5954,7 +5954,7 @@ export const trainers = [{
   "city": "Liverpool",
   "email": "ccarnier2b@canalblog.com",
   "phone": "44(693)485-0341",
-  "skill": "Business Advisor",
+  "skill": "Business",
   "rating": 5,
   "reviewers": 526,
   "achievements": [
@@ -5994,7 +5994,7 @@ export const trainers = [{
   "city": "Whitchurch",
   "email": "kmalcher2c@wordpress.com",
   "phone": "44(682)813-9417",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 4,
   "reviewers": 762,
   "achievements": [
@@ -6710,7 +6710,7 @@ export const trainers = [{
   "city": "Marston",
   "email": "mminor2n@goo.gl",
   "phone": "44(925)892-6530",
-  "skill": "Psychologyst",
+  "skill": "Business Coach",
   "rating": 4,
   "reviewers": 967,
   "achievements": [
@@ -6816,7 +6816,7 @@ export const trainers = [{
   "city": "Hatton",
   "email": "fwestpfel2o@who.int",
   "phone": "44(866)858-6766",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 4,
   "reviewers": 686,
   "achievements": [
@@ -7035,7 +7035,7 @@ export const trainers = [{
   "city": "Weston",
   "email": "dparffrey2r@blinklist.com",
   "phone": "44(203)818-1793",
-  "skill": "Cross Fit Trainer",
+  "skill": "Life Advisor",
   "rating": 5,
   "reviewers": 931,
   "achievements": [

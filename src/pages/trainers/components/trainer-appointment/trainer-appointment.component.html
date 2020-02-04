@@ -19,26 +19,10 @@
         <div class="skill">{{trainer.skill}}</div>
       </div>
     </app-simple-item>
-
-    <app-simple-item>
-      <ion-icon src="assets/icon/calendar.svg" prefix></ion-icon>
-      <ion-datetime [(ngModel)]="appointment.date" displayFormat="MMM DD, YYYY" pickerFormat="MMM DD, YYYY">
-      </ion-datetime>
-    </app-simple-item>
-
-    <app-simple-item>
-      <ion-icon src="assets/icon/clock.svg" prefix></ion-icon>
-      <ion-datetime [(ngModel)]="appointment.date" displayFormat="HH:mm" pickerFormat="HH:mm"></ion-datetime>
-    </app-simple-item>
-
-    <app-simple-item class="detail">
-      <h5>Details</h5>
-      <textarea elastic-textarea="100" [(ngModel)]="appointment.detail"></textarea>
-    </app-simple-item>
-
-    <ion-button class="submit" (click)="manageAppt(appointment)" expand="block" shape="round" color="gradient"> Make
-      Appointment
-    </ion-button>
   </app-spinner>
+
+  <iframe src="https://app.acuityscheduling.com/schedule.php?owner=19001088" frameBorder="0" style="width:100%;height:100%" scrolling="yes" ></iframe>
+
+
 
 </ion-content>

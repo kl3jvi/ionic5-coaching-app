@@ -18,7 +18,7 @@ export class AppComponent extends Extender {
    */
   public appPages = [
     {
-      title: 'intro',
+      title: 'Home',
       url: this.routes.intro,
       icon: 'assets/icon/home.svg'
     },
@@ -27,11 +27,11 @@ export class AppComponent extends Extender {
       url: this.routes.blogs,
       icon: 'assets/icon/bag.svg'
     },
-    {
+   /* {
       title: 'gyms',
       url: this.routes.gyms,
       icon: 'assets/icon/activity.svg'
-    },
+    }, */
     {
       title: 'Coaches',
       url: this.routes.trainers,
